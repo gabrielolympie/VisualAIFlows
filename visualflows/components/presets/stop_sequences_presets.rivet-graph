@@ -1,0 +1,62 @@
+version: 4
+data:
+    metadata:
+        description: Stop Sequences
+        id: 5DnEtyedoghg1QyfYSjRx
+        name: presets/stop_sequences
+    nodes:
+        '[J3t-PQV4SGx13axWyOYff]:object "Object"':
+            data:
+                jsonTemplate: |-
+                    {
+                        "0 </s>":"</s>",
+                        "1 ```":"```",
+                        "2 <|im_end|>":"<|im_end|>",
+                        "3 3xhashtag":"###",
+                        "4 2xhashtag":"##"
+                    }
+            
+            outgoingConnections:
+                      - output->"Destructure" MfGWjm76DW59_OGcwotyJ/object
+            
+            visualData: 0/0/400/800//
+        '[MfGWjm76DW59_OGcwotyJ]:destructure "Destructure"':
+            data:
+                paths:
+                      - 0 </s>
+                      - 1 ```
+                      - 2 <|im_end|>
+                      - 3 3xhashtag
+                      - 4 2xhashtag    
+            outgoingConnections:
+                      - match_0->"Graph Output" zR9Vs8tTg7hnipEoQj4oi/value
+                      - match_1->"Graph Output" 3--ESKMyOUkb5HoK8LoZI/value
+                      - match_2->"Graph Output" lj1X-S-sqDkRCR1LxlupE/value
+                      - match_3->"Graph Output" PerG6fby4YD66ZsQmxm2k/value
+                      - match_4->"Graph Output" sz7J-b_lzOos9YkKo-Cu1/value    
+            visualData: 500/0/400/800//
+        '[sz7J-b_lzOos9YkKo-Cu1]:graphOutput "Graph Output"':
+            data:
+                dataType: string
+                id: 4 2xhashtag
+            visualData: 1000/600/400/800//
+        '[PerG6fby4YD66ZsQmxm2k]:graphOutput "Graph Output"':
+            data:
+                dataType: string
+                id: 3 3xhashtag
+            visualData: 1000/450/400/800//
+        '[lj1X-S-sqDkRCR1LxlupE]:graphOutput "Graph Output"':
+            data:
+                dataType: string
+                id: 2 <|im_end|>
+            visualData: 1000/300/400/800//
+        '[3--ESKMyOUkb5HoK8LoZI]:graphOutput "Graph Output"':
+            data:
+                dataType: string
+                id: 1 ```
+            visualData: 1000/150/400/800//
+        '[zR9Vs8tTg7hnipEoQj4oi]:graphOutput "Graph Output"':
+            data:
+                dataType: string
+                id: 0 </s>
+            visualData: 1000/0/400/800//

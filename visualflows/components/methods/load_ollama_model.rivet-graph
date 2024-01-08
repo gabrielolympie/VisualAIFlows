@@ -1,0 +1,115 @@
+version: 4
+data:
+    metadata:
+        description: load_ollama_model
+        id: TtkuL2zft19_cH_F3_Ufj4
+        name: methods/load_ollama_model
+    nodes:
+        '[cT7IGZm76Lq6zc4EVBWb-]:graphInput "temperature"':
+            data:
+                dataType: number
+                defaultValue: 0.01
+                editor: number
+                id: temperature
+                useDefaultValueInput: false
+            outgoingConnections:
+              - 'data->"Object" RZV9vYoFCmSFkqquKr7AD/ temperature '
+            visualData: -500/750/400/800//
+        '[XB93R9x3h61QybgZeg-Sc]:graphInput "stop_sequences"':
+            data:
+                dataType: string
+                defaultValue: </s>
+                editor: string
+                id: stop_sequences
+                useDefaultValueInput: false
+            outgoingConnections:
+              - 'data->"Object" RZV9vYoFCmSFkqquKr7AD/ stop_sequences '
+            visualData: -500/600/400/800//
+        '[I6W1_x5A4UjQN3nPfckDE]:graphInput "max_new_tokens"':
+            data:
+                dataType: number
+                defaultValue: 256
+                editor: number
+                id: max_new_tokens
+                useDefaultValueInput: false
+            outgoingConnections:
+              - 'data->"Object" RZV9vYoFCmSFkqquKr7AD/ max_new_tokens '
+            visualData: -500/450/400/800//
+        '[JmZIBuslUpZQJ_TFMC45B]:graphInput "num_gpu"':
+            data:
+                dataType: number
+                defaultValue: -1
+                editor: number
+                id: num_gpu
+                useDefaultValueInput: false
+            outgoingConnections:
+              - 'data->"Object" RZV9vYoFCmSFkqquKr7AD/ num_gpu '
+            visualData: -500/300/400/800//
+        '[3731lMsTyG3IP1QHjoabb]:graphInput "model"':
+            data:
+                dataType: string
+                defaultValue: dolphin-phi
+                editor: string
+                id: model
+                useDefaultValueInput: false
+            outgoingConnections:
+              - 'data->"Object" RZV9vYoFCmSFkqquKr7AD/ model '
+            visualData: -500/150/400/800//
+        '[A4vDRDdDutlc2RWPc-br3]:graphInput "identifier"':
+            data:
+                dataType: string
+                defaultValue: dolphin-phi
+                editor: string
+                id: identifier
+                useDefaultValueInput: false
+            outgoingConnections:
+              - 'data->"Object" RZV9vYoFCmSFkqquKr7AD/ identifier '
+            visualData: -500/0/400/800//
+        '[RZV9vYoFCmSFkqquKr7AD]:object "Object"':
+            data:
+                jsonTemplate: |-
+                    {
+                        "identifier": {{ identifier }},
+                        "model": {{ model }},
+                        "num_gpu": {{ num_gpu }},
+                        "max_new_tokens": {{ max_new_tokens }},
+                        "stop_sequences": {{ stop_sequences }},
+                        "temperature": {{ temperature }}
+                    }
+            
+            outgoingConnections:
+                      - output->"HTTP CALL" 1rXU8LOBulyBFe3us-qNg/req_body
+            
+            visualData: 0/0/400/800//
+        '[71cVL1a5JDfU158yiUVbC]:object "Object"':
+            data:
+                jsonTemplate: |-
+                    {
+                        "Content-Type":"application/json"
+                    }
+            
+            outgoingConnections:
+                      - output->"HTTP CALL" 1rXU8LOBulyBFe3us-qNg/headers
+            
+            visualData: 0/-200/400/800//
+        '[1rXU8LOBulyBFe3us-qNg]:httpCall "HTTP CALL"':
+            data:
+                body: ""
+                errorOnNon200: true
+                headers: ""
+                jsonTemplate: ""
+                method: POST
+                text: ""
+                url: http://localhost:8000/methods/load_ollama_model
+                useBodyInput: true
+                useHeadersInput: true
+                useMethodInput: false
+                useUrlInput: false
+            outgoingConnections:
+                      - res_body->"Graph Output" By-F3jMgDiGuLD51BeQPU/value
+            visualData: 500/0/400/800//
+        '[By-F3jMgDiGuLD51BeQPU]:graphOutput "Graph Output"':
+            data:
+                dataType: string
+                id: identifier
+            visualData: 1000/0/400/800//

@@ -1,0 +1,10 @@
+graph_description: Stop Sequences
+graph_id: 5DnEtyedoghg1QyfYSjRx
+graph_name: presets/stop_sequences
+values:
+  0 </s>: "</s>"
+  1 ```: "```"
+  2 <|im_end|>: "<|im_end|>"
+  3 3xhashtag: "###"
+  4 2xhashtag: "##"
+values_type: string

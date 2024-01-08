@@ -1,0 +1,46 @@
+version: 4
+data:
+    metadata:
+        description: HF Open LLM
+        id: W5FJJpKxAOSVtyvtx1BQj
+        name: presets/hf_hosted_text_gen
+    nodes:
+        '[-jWQWanU3J2BjXyLHFFIM]:object "Object"':
+            data:
+                jsonTemplate: |-
+                    {
+                        "mixtral_8x7b_instruct_01":"mistralai/Mixtral-8x7B-Instruct-v0.1",
+                        "zephyr_beta":"HuggingFaceH4/zephyr-7b-beta",
+                        "star_chat_beta":"HuggingFaceH4/starchat-beta"
+                    }
+            
+            outgoingConnections:
+                      - output->"Destructure" zchwpHNyn6ocAcxbldC7S/object
+            
+            visualData: 0/0/400/800//
+        '[zchwpHNyn6ocAcxbldC7S]:destructure "Destructure"':
+            data:
+                paths:
+                      - mixtral_8x7b_instruct_01
+                      - zephyr_beta
+                      - star_chat_beta    
+            outgoingConnections:
+                      - match_0->"Graph Output" rXmOUXkkd5Y7MNVoNqbO5/value
+                      - match_1->"Graph Output" zIAhB28fEiBXic3tABokF/value
+                      - match_2->"Graph Output" k_syPibEWpZ1QCt1eAEDi/value    
+            visualData: 500/0/400/800//
+        '[k_syPibEWpZ1QCt1eAEDi]:graphOutput "Graph Output"':
+            data:
+                dataType: string
+                id: star_chat_beta
+            visualData: 1000/300/400/800//
+        '[zIAhB28fEiBXic3tABokF]:graphOutput "Graph Output"':
+            data:
+                dataType: string
+                id: zephyr_beta
+            visualData: 1000/150/400/800//
+        '[rXmOUXkkd5Y7MNVoNqbO5]:graphOutput "Graph Output"':
+            data:
+                dataType: string
+                id: mixtral_8x7b_instruct_01
+            visualData: 1000/0/400/800//

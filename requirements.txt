@@ -1,0 +1,8 @@
+torch
+torchvision
+torchaudio
+einops
+langchain
+fastapi
+uvicorn
+faster-whisper

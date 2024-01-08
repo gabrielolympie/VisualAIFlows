@@ -1,0 +1,33 @@
+graph_description: load_hf_hosted_model
+graph_id: TtkuL2gcFK_cH_F3_Ufj4
+graph_name: methods/load_hf_hosted_model
+fast_api_route: /methods/load_hf_hosted_model
+  
+inputs:
+    identifier:
+        type: str
+        data_type: string
+        value: "zephyr"
+    hf_name:
+        type: str
+        data_type: string
+        value: "HuggingFaceH4/zephyr-7b-beta"
+    auth_token:
+        type: str
+        data_type: string
+        value: ""
+    max_new_tokens:
+        type: int
+        data_type: number
+        value: 256
+    stop_sequences:
+        type: str
+        data_type: string
+        value: "</s>"
+    temperature:
+        type: float
+        data_type: number
+        value: 0.01
+  
+outputs:
+  identifier: string

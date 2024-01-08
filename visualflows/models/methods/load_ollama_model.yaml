@@ -1,0 +1,33 @@
+graph_description: load_ollama_model
+graph_id: TtkuL2zft19_cH_F3_Ufj4
+graph_name: methods/load_ollama_model
+fast_api_route: /methods/load_ollama_model
+  
+inputs:
+    identifier:
+        type: str
+        data_type: string
+        value: "dolphin-phi"
+    model:
+        type: str
+        data_type: string
+        value: "dolphin-phi"
+    num_gpu:
+        type: int
+        data_type: number
+        value: -1
+    max_new_tokens:
+        type: int
+        data_type: number
+        value: 256
+    stop_sequences:
+        type: str
+        data_type: string
+        value: "</s>"
+    temperature:
+        type: float
+        data_type: number
+        value: 0.01
+  
+outputs:
+  identifier: string

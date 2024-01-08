@@ -1,0 +1,17 @@
+graph_description: transcribe
+graph_id: ssYnXODjAmiEvKK2Z-ILu
+graph_name: methods/transcribe
+fast_api_route: /methods/transcribe
+  
+inputs:
+    identifier:
+        type: str
+        data_type: string
+        value: "whisper"
+    path_to_audio:
+        type: str
+        data_type: string
+        value: "Hello World"
+  
+outputs:
+  identifier: string

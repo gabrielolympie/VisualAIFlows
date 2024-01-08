@@ -1,0 +1,10 @@
+graph_description: Creativité du llm
+graph_id: Zwrmg-p5r5TrkZkbntZuO
+graph_name: presets/temperature
+values:
+  0 Formal: 0.0
+  1 Balanced: 0.3
+  2 Creative: 0.7
+  3 Drunk: 0.99
+  4 Crazy: 1.3
+values_type: number

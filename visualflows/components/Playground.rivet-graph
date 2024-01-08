@@ -1,0 +1,131 @@
+version: 4
+data:
+    metadata:
+        description: Playground
+        id: fkNyEWMNcqvtno3aLQONC
+        name: Playground
+    nodes:
+        '[cOO4QRFhL7mP9XUePraXI]:comment "Playground"':
+            data:
+                backgroundColor: rgba(254,152,154,0.3)
+                color: rgba(255,255,255,1)
+                height: 600
+                text: "## Methods"
+            visualData: 200/200/15600/600//
+        '[sPDIQXpG1smPze_Eq52fg]:comment "Playground"':
+            data:
+                backgroundColor: rgba(230,254,115,0.3)
+                color: rgba(255,255,255,1)
+                height: 600
+                text: "## Prompts"
+            visualData: 200/3200/15600/600//
+        '[Z45I_wb2nh4JEmqvEtQwS]:comment "Playground"':
+            data:
+                backgroundColor: rgba(120,245,206,0.3)
+                color: rgba(255,255,255,1)
+                height: 2300
+                text: "## Presets"
+            visualData: 200/850/600/2300//
+        '[kecj1K-D56cMGHBVtw1NW]:comment "Playground"':
+            data:
+                backgroundColor: rgba(62,52,255,0.3)
+                color: rgba(255,255,255,1)
+                height: 2300
+                text: "## Flows"
+            visualData: 850/850/14950/2300//
+        '[IZrA1Aajevjm8I-yZ3_Gl]:subGraph "auth_presets"':
+            data:
+                graphId: 7NcPhV8OHI8jI3uzYn4fK
+                useAsGraphPartialOutput: false
+                useErrorOutput: false
+                height: 400
+            outgoingConnections:
+            visualData: 250/1000/500/400//
+        '[2yiR8ugGEBxFcW9GxswSG]:subGraph "hf_open_llm_presets"':
+            data:
+                graphId: W5FJJpKxAOSVtyvtx1BQj
+                useAsGraphPartialOutput: false
+                useErrorOutput: false
+                height: 400
+            outgoingConnections:
+            visualData: 250/1250/500/400//
+        '[SfcauPNqfdRqHJGTIyRAM]:subGraph "stop_sequences_presets"':
+            data:
+                graphId: 5DnEtyedoghg1QyfYSjRx
+                useAsGraphPartialOutput: false
+                useErrorOutput: false
+                height: 400
+            outgoingConnections:
+            visualData: 250/1500/500/400//
+        '[1kQJi7smlYWh644NNaq_f]:subGraph "temperature_presets"':
+            data:
+                graphId: Zwrmg-p5r5TrkZkbntZuO
+                useAsGraphPartialOutput: false
+                useErrorOutput: false
+                height: 400
+            outgoingConnections:
+            visualData: 250/1750/500/400//
+        '[l3wUqrK1b6jOjRJoePB58]:subGraph "ollama_llm_presets"':
+            data:
+                graphId: W5FJPpKQAOaVtyvtx1BQj
+                useAsGraphPartialOutput: false
+                useErrorOutput: false
+                height: 400
+            outgoingConnections:
+            visualData: 250/2000/500/400//
+        '[qPsOD_ANiK-QiomYjlqIG]:subGraph "context_len_presets"':
+            data:
+                graphId: FKfBEDxsK3dcCEApDArJ1
+                useAsGraphPartialOutput: false
+                useErrorOutput: false
+                height: 400
+            outgoingConnections:
+            visualData: 250/2250/500/400//
+        '[8hezclQ89pYYXaXZxOqhz]:subGraph "load_hf_hosted_model"':
+            data:
+                graphId: TtkuL2gcFK_cH_F3_Ufj4
+                useAsGraphPartialOutput: false
+                useErrorOutput: false
+                height: 400
+            outgoingConnections:
+            visualData: 250/400/500/400//
+        '[B1u4ai6pc5dBrVt2c-75B]:subGraph "load_ollama_model"':
+            data:
+                graphId: TtkuL2zft19_cH_F3_Ufj4
+                useAsGraphPartialOutput: false
+                useErrorOutput: false
+                height: 400
+            outgoingConnections:
+            visualData: 850/400/500/400//
+        '[hH85gUgmZomHwqdR3e4PQ]:subGraph "load_whisper"':
+            data:
+                graphId: ssYNXMPG88iEvKK2Z-Ihu
+                useAsGraphPartialOutput: false
+                useErrorOutput: false
+                height: 400
+            outgoingConnections:
+            visualData: 1450/400/500/400//
+        '[Qy6taMggvwpKLbUa4XLqt]:subGraph "run_prompt"':
+            data:
+                graphId: ssYnXDDG8hiEvKK2Z-ILu
+                useAsGraphPartialOutput: false
+                useErrorOutput: false
+                height: 400
+            outgoingConnections:
+            visualData: 2050/400/500/400//
+        '[VmnB5Y3sxfFJtRboekCYg]:subGraph "transcribe"':
+            data:
+                graphId: ssYnXODjAmiEvKK2Z-ILu
+                useAsGraphPartialOutput: false
+                useErrorOutput: false
+                height: 400
+            outgoingConnections:
+            visualData: 2650/400/500/400//
+        '[5k3l5-N5dfgSbojo-g_3t]:subGraph "run_code_with_error"':
+            data:
+                graphId: 8ibqxj_6Nx-cjTaWBG4pn
+                useAsGraphPartialOutput: false
+                useErrorOutput: false
+                height: 400
+            outgoingConnections:
+            visualData: 3250/400/500/400//

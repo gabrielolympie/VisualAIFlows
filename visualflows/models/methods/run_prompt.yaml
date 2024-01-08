@@ -1,0 +1,17 @@
+graph_description: run_prompt
+graph_id: ssYnXDDG8hiEvKK2Z-ILu
+graph_name: methods/run_prompt
+fast_api_route: /methods/run_prompt
+  
+inputs:
+    identifier:
+        type: str
+        data_type: string
+        value: "zephyr"
+    prompt:
+        type: str
+        data_type: string
+        value: "Hello World"
+  
+outputs:
+  identifier: string

@@ -1,0 +1,62 @@
+version: 4
+data:
+    metadata:
+        description: Creativité du llm
+        id: Zwrmg-p5r5TrkZkbntZuO
+        name: presets/temperature
+    nodes:
+        '[FD8Es1tRGdHQMBmFRrEiG]:object "Object"':
+            data:
+                jsonTemplate: |-
+                    {
+                        "0 Formal":0.0,
+                        "1 Balanced":0.3,
+                        "2 Creative":0.7,
+                        "3 Drunk":0.99,
+                        "4 Crazy":1.3
+                    }
+            
+            outgoingConnections:
+                      - output->"Destructure" yOhUOuZFRZQrcN_nYXsT5/object
+            
+            visualData: 0/0/400/800//
+        '[yOhUOuZFRZQrcN_nYXsT5]:destructure "Destructure"':
+            data:
+                paths:
+                      - 0 Formal
+                      - 1 Balanced
+                      - 2 Creative
+                      - 3 Drunk
+                      - 4 Crazy    
+            outgoingConnections:
+                      - match_0->"Graph Output" hkEdcZ_uDRzomrdK9c9Wz/value
+                      - match_1->"Graph Output" Qe2rFJyRkaegRylebQRkd/value
+                      - match_2->"Graph Output" AnTOn6AJEiMG-V2rwrqoH/value
+                      - match_3->"Graph Output" _NA__xZ4GT2LZpe9XhEwU/value
+                      - match_4->"Graph Output" t16-MM3mRoNZdHNJK1p9Q/value    
+            visualData: 500/0/400/800//
+        '[t16-MM3mRoNZdHNJK1p9Q]:graphOutput "Graph Output"':
+            data:
+                dataType: number
+                id: 4 Crazy
+            visualData: 1000/600/400/800//
+        '[_NA__xZ4GT2LZpe9XhEwU]:graphOutput "Graph Output"':
+            data:
+                dataType: number
+                id: 3 Drunk
+            visualData: 1000/450/400/800//
+        '[AnTOn6AJEiMG-V2rwrqoH]:graphOutput "Graph Output"':
+            data:
+                dataType: number
+                id: 2 Creative
+            visualData: 1000/300/400/800//
+        '[Qe2rFJyRkaegRylebQRkd]:graphOutput "Graph Output"':
+            data:
+                dataType: number
+                id: 1 Balanced
+            visualData: 1000/150/400/800//
+        '[hkEdcZ_uDRzomrdK9c9Wz]:graphOutput "Graph Output"':
+            data:
+                dataType: number
+                id: 0 Formal
+            visualData: 1000/0/400/800//

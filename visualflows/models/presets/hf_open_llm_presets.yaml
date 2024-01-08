@@ -1,0 +1,8 @@
+graph_description: HF Open LLM
+graph_id: W5FJJpKxAOSVtyvtx1BQj
+graph_name: presets/hf_hosted_text_gen
+values:
+  mixtral_8x7b_instruct_01: "mistralai/Mixtral-8x7B-Instruct-v0.1"
+  zephyr_beta: "HuggingFaceH4/zephyr-7b-beta"
+  star_chat_beta: "HuggingFaceH4/starchat-beta"
+values_type: string

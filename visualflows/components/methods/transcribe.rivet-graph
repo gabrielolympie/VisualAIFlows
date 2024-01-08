@@ -1,0 +1,71 @@
+version: 4
+data:
+    metadata:
+        description: transcribe
+        id: ssYnXODjAmiEvKK2Z-ILu
+        name: methods/transcribe
+    nodes:
+        '[1ENLUONvTiz3z7uKzMMcV]:graphInput "path_to_audio"':
+            data:
+                dataType: string
+                defaultValue: Hello World
+                editor: string
+                id: path_to_audio
+                useDefaultValueInput: false
+            outgoingConnections:
+              - 'data->"Object" ZNQwvOpOx8YBLKvlcbyYy/ path_to_audio '
+            visualData: -500/150/400/800//
+        '[AeGcHkoNtpjpThoajcwaO]:graphInput "identifier"':
+            data:
+                dataType: string
+                defaultValue: whisper
+                editor: string
+                id: identifier
+                useDefaultValueInput: false
+            outgoingConnections:
+              - 'data->"Object" ZNQwvOpOx8YBLKvlcbyYy/ identifier '
+            visualData: -500/0/400/800//
+        '[ZNQwvOpOx8YBLKvlcbyYy]:object "Object"':
+            data:
+                jsonTemplate: |-
+                    {
+                        "identifier": {{ identifier }},
+                        "path_to_audio": {{ path_to_audio }}
+                    }
+            
+            outgoingConnections:
+                      - output->"HTTP CALL" 29M2B1NfQB5TvvIoKuQA5/req_body
+            
+            visualData: 0/0/400/800//
+        '[A8-8SAgUMrFZFtW7JetAh]:object "Object"':
+            data:
+                jsonTemplate: |-
+                    {
+                        "Content-Type":"application/json"
+                    }
+            
+            outgoingConnections:
+                      - output->"HTTP CALL" 29M2B1NfQB5TvvIoKuQA5/headers
+            
+            visualData: 0/-200/400/800//
+        '[29M2B1NfQB5TvvIoKuQA5]:httpCall "HTTP CALL"':
+            data:
+                body: ""
+                errorOnNon200: true
+                headers: ""
+                jsonTemplate: ""
+                method: POST
+                text: ""
+                url: http://localhost:8000/methods/transcribe
+                useBodyInput: true
+                useHeadersInput: true
+                useMethodInput: false
+                useUrlInput: false
+            outgoingConnections:
+                      - res_body->"Graph Output" q_75-qaLwU9Orl54ZmbtF/value
+            visualData: 500/0/400/800//
+        '[q_75-qaLwU9Orl54ZmbtF]:graphOutput "Graph Output"':
+            data:
+                dataType: string
+                id: identifier
+            visualData: 1000/0/400/800//

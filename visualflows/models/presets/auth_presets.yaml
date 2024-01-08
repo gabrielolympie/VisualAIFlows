@@ -1,0 +1,6 @@
+graph_description: auth tokens
+graph_id: 7NcPhV8OHI8jI3uzYn4fK
+graph_name: presets/auth_presets
+values:
+  name: api_key
+values_type: string

@@ -1,0 +1,78 @@
+version: 4
+data:
+    metadata:
+        description: Ollama presets
+        id: W5FJPpKQAOaVtyvtx1BQj
+        name: presets/ollama_llm_presets
+    nodes:
+        '[RF_paptUFIUyi6quER9AU]:object "Object"':
+            data:
+                jsonTemplate: |-
+                    {
+                        "tinyllama-1b":"tinyllama-1b",
+                        "magicoder-ds-7b":"magicoder-ds-7b",
+                        "openchat-35-1210":"openchat-35-1210",
+                        "prometheus-7b-v1":"prometheus-7b-v1",
+                        "dolphin-26-mistral":"dolphin-26-mistral",
+                        "dolphin-26-phi":"dolphin-26-phi",
+                        "gorilla-function":"gorilla-function"
+                    }
+            
+            outgoingConnections:
+                      - output->"Destructure" Hz2g7OSSIZN1cD9EkA6PS/object
+            
+            visualData: 0/0/400/800//
+        '[Hz2g7OSSIZN1cD9EkA6PS]:destructure "Destructure"':
+            data:
+                paths:
+                      - tinyllama-1b
+                      - magicoder-ds-7b
+                      - openchat-35-1210
+                      - prometheus-7b-v1
+                      - dolphin-26-mistral
+                      - dolphin-26-phi
+                      - gorilla-function    
+            outgoingConnections:
+                      - match_0->"Graph Output" j3yytx6pfJYYmFQ62VcxW/value
+                      - match_1->"Graph Output" G8_PZ4UEkZGM8tG9tTvaB/value
+                      - match_2->"Graph Output" 4Ibc2MGNbEVda3KSXDNPx/value
+                      - match_3->"Graph Output" 9aWypURS5hIRPPWpKE4Ui/value
+                      - match_4->"Graph Output" vYf83l18D-F4ffNESH8cc/value
+                      - match_5->"Graph Output" ZXvYplyJlYhnddN1b6pje/value
+                      - match_6->"Graph Output" bzZZ8Iqgz5JMIbsD8IrQ2/value    
+            visualData: 500/0/400/800//
+        '[bzZZ8Iqgz5JMIbsD8IrQ2]:graphOutput "Graph Output"':
+            data:
+                dataType: string
+                id: gorilla-function
+            visualData: 1000/900/400/800//
+        '[ZXvYplyJlYhnddN1b6pje]:graphOutput "Graph Output"':
+            data:
+                dataType: string
+                id: dolphin-26-phi
+            visualData: 1000/750/400/800//
+        '[vYf83l18D-F4ffNESH8cc]:graphOutput "Graph Output"':
+            data:
+                dataType: string
+                id: dolphin-26-mistral
+            visualData: 1000/600/400/800//
+        '[9aWypURS5hIRPPWpKE4Ui]:graphOutput "Graph Output"':
+            data:
+                dataType: string
+                id: prometheus-7b-v1
+            visualData: 1000/450/400/800//
+        '[4Ibc2MGNbEVda3KSXDNPx]:graphOutput "Graph Output"':
+            data:
+                dataType: string
+                id: openchat-35-1210
+            visualData: 1000/300/400/800//
+        '[G8_PZ4UEkZGM8tG9tTvaB]:graphOutput "Graph Output"':
+            data:
+                dataType: string
+                id: magicoder-ds-7b
+            visualData: 1000/150/400/800//
+        '[j3yytx6pfJYYmFQ62VcxW]:graphOutput "Graph Output"':
+            data:
+                dataType: string
+                id: tinyllama-1b
+            visualData: 1000/0/400/800//

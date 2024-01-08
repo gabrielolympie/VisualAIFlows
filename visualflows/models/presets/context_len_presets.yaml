@@ -1,0 +1,15 @@
+graph_description: Longueur de contexte pour un llm
+graph_id: FKfBEDxsK3dcCEApDArJ1
+graph_name: presets/context_len
+values:
+  0 64: 64
+  1 128: 128
+  2 256: 256
+  3 512: 512
+  4 1k: 1024
+  5 2k: 2048
+  6 4k: 4096
+  7 8k: 8192
+  8 16k: 16384
+  9 32k: 32768
+values_type: number

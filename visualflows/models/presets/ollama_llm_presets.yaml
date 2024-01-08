@@ -1,0 +1,20 @@
+graph_description: Ollama presets
+graph_id: W5FJPpKQAOaVtyvtx1BQj
+graph_name: presets/ollama_llm_presets
+values:
+  tinyllama-1b: "tinyllama-1b"
+  magicoder-ds-7b: "magicoder-ds-7b"
+  openchat-35-1210: "openchat-35-1210"
+  prometheus-7b-v1: "prometheus-7b-v1"
+  dolphin-26-mistral: "dolphin-26-mistral"
+  dolphin-26-phi: "dolphin-26-phi"
+  gorilla-function: "gorilla-function"
+values_type: string
+downloads:
+  tinyllama-1b: 'https://huggingface.co/TheBloke/TinyLlama-1.1B-Chat-v1.0-GGUF/resolve/main/tinyllama-1.1b-chat-v1.0.Q5_K_S.gguf'
+  dolphin-26-phi: 'https://huggingface.co/TheBloke/dolphin-2_6-phi-2-GGUF/resolve/main/dolphin-2_6-phi-2.Q5_K_M.gguf'
+  dolphin-26-mistral: 'https://huggingface.co/TheBloke/dolphin-2.6-mistral-7B-dpo-GGUF/resolve/main/dolphin-2.6-mistral-7b-dpo.Q5_K_S.gguf'
+  magicoder-ds-7b: 'https://huggingface.co/TheBloke/Magicoder-S-DS-6.7B-GGUF/resolve/main/magicoder-s-ds-6.7b.Q5_K_M.gguf'
+  openchat-35-1210: 'https://huggingface.co/TheBloke/openchat-3.5-1210-GGUF/resolve/main/openchat-3.5-1210.Q5_K_M.gguf'
+  prometheus-7b-v1: 'https://huggingface.co/TheBloke/prometheus-7B-v1.0-GGUF/resolve/main/prometheus-7b-v1.0.Q5_K_M.gguf'
+  gorilla-function: 'https://huggingface.co/TheBloke/gorilla-openfunctions-v1-GGUF/resolve/main/gorilla-openfunctions-v1.Q5_K_M.gguf'

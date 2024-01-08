@@ -1,0 +1,13 @@
+graph_description: run_code_with_error
+graph_id: 8ibqxj_6Nx-cjTaWBG4pn
+graph_name: methods/run_code_with_error
+fast_api_route: /methods/run_code_with_error
+  
+inputs:
+    code:
+        type: str
+        data_type: string
+        value: "print('hello world')"
+  
+outputs:
+  result: string

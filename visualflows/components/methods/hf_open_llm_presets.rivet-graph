@@ -1,0 +1,116 @@
+version: 4
+data:
+
+    metadata:
+        description: load_hf_hosted_model
+        id: TtkuL2gcFK_cH_F3_Ufj4
+        name: methods/load_hf_hosted_model
+    nodes:
+        '[V3TEI1f7OrTWr9Ot7cxDe]:graphInput "temperature"':
+            data:
+                dataType: number
+                defaultValue: 0.01
+                editor: number
+                id: temperature
+                useDefaultValueInput: false
+            outgoingConnections:
+              - 'data->"Object" NZyrJGUGDgH3LpwkASVft/ temperature '
+            visualData: -500/750/400/800//
+        '[Ej8Nyu_V5SseaFSO48XvD]:graphInput "stop_sequences"':
+            data:
+                dataType: string
+                defaultValue: </s>
+                editor: string
+                id: stop_sequences
+                useDefaultValueInput: false
+            outgoingConnections:
+              - 'data->"Object" NZyrJGUGDgH3LpwkASVft/ stop_sequences '
+            visualData: -500/600/400/800//
+        '[fDT4DHaIp5YK76b2IXzGZ]:graphInput "max_new_tokens"':
+            data:
+                dataType: number
+                defaultValue: 256
+                editor: number
+                id: max_new_tokens
+                useDefaultValueInput: false
+            outgoingConnections:
+              - 'data->"Object" NZyrJGUGDgH3LpwkASVft/ max_new_tokens '
+            visualData: -500/450/400/800//
+        '[7NFTHIuLESvK7YQuYIvN7]:graphInput "auth_token"':
+            data:
+                dataType: string
+                defaultValue: 
+                editor: string
+                id: auth_token
+                useDefaultValueInput: false
+            outgoingConnections:
+              - 'data->"Object" NZyrJGUGDgH3LpwkASVft/ auth_token '
+            visualData: -500/300/400/800//
+        '[Pe2zdKlQdTRd1XWZHFI2z]:graphInput "hf_name"':
+            data:
+                dataType: string
+                defaultValue: HuggingFaceH4/zephyr-7b-beta
+                editor: string
+                id: hf_name
+                useDefaultValueInput: false
+            outgoingConnections:
+              - 'data->"Object" NZyrJGUGDgH3LpwkASVft/ hf_name '
+            visualData: -500/150/400/800//
+        '[tPpw62jyHoRtm2789qwpg]:graphInput "identifier"':
+            data:
+                dataType: string
+                defaultValue: zephyr
+                editor: string
+                id: identifier
+                useDefaultValueInput: false
+            outgoingConnections:
+              - 'data->"Object" NZyrJGUGDgH3LpwkASVft/ identifier '
+            visualData: -500/0/400/800//
+        '[NZyrJGUGDgH3LpwkASVft]:object "Object"':
+            data:
+                jsonTemplate: |-
+                    {
+                        "identifier": {{ identifier }},
+                        "hf_name": {{ hf_name }},
+                        "auth_token": {{ auth_token }},
+                        "max_new_tokens": {{ max_new_tokens }},
+                        "stop_sequences": {{ stop_sequences }},
+                        "temperature": {{ temperature }}
+                    }
+            
+            outgoingConnections:
+                      - output->"HTTP CALL" pxIwJyoUKc4FdrcX5bkkj/req_body
+            
+            visualData: 0/0/400/800//
+        '[6nHZ5nOxxCyJdHHou_g4P]:object "Object"':
+            data:
+                jsonTemplate: |-
+                    {
+                        "Content-Type":"application/json"
+                    }
+            
+            outgoingConnections:
+                      - output->"HTTP CALL" pxIwJyoUKc4FdrcX5bkkj/headers
+            
+            visualData: 0/-200/400/800//
+        '[pxIwJyoUKc4FdrcX5bkkj]:httpCall "HTTP CALL"':
+            data:
+                body: ""
+                errorOnNon200: true
+                headers: ""
+                jsonTemplate: ""
+                method: POST
+                text: ""
+                url: http://localhost:8000/methods/load_hf_hosted_model
+                useBodyInput: true
+                useHeadersInput: true
+                useMethodInput: false
+                useUrlInput: false
+            outgoingConnections:
+                      - res_body->"Graph Output" NziSdsADlX-l4Zw_nA2O8/value
+            visualData: 500/0/400/800//
+        '[NziSdsADlX-l4Zw_nA2O8]:graphOutput "Graph Output"':
+            data:
+                dataType: string
+                id: identifier
+            visualData: 1000/0/400/800/

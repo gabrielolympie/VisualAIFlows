@@ -1,0 +1,30 @@
+version: 4
+data:
+    metadata:
+        description: auth tokens
+        id: 7NcPhV8OHI8jI3uzYn4fK
+        name: presets/auth_presets
+    nodes:
+        '[TmRMEK28vbg91CFwZB-6F]:object "Object"':
+            data:
+                jsonTemplate: |-
+                    {
+                        "name":"api_key"
+                    }
+            
+            outgoingConnections:
+                      - output->"Destructure" tIY9avU8X8_N1XIYSH_IB/object
+            
+            visualData: 0/0/400/800//
+        '[tIY9avU8X8_N1XIYSH_IB]:destructure "Destructure"':
+            data:
+                paths:
+                      - name    
+            outgoingConnections:
+                      - match_0->"Graph Output" 2HZiikex6tuy1M5HhWhOD/value    
+            visualData: 500/0/400/800//
+        '[2HZiikex6tuy1M5HhWhOD]:graphOutput "Graph Output"':
+            data:
+                dataType: string
+                id: name
+            visualData: 1000/0/400/800//
