@@ -22,7 +22,7 @@ Currently implemented routes:
 - Clone this repo
 - Install the requirements
 - Move into VisualAIFlows/visualflows
-
+- Install Rivet : https://rivet.ironcladapp.com/
 - Optional: Install ollama: curl https://ollama.ai/install.sh | sh
 
 ## Basic Usage: Plug and play in rivet
