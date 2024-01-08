@@ -1,6 +1,8 @@
 # VisualAIFlows
 A simple Fast API Backend for Ironclad/rivet, enabling easily create python components, and orchestrate them with rivet
 
+![image](https://github.com/gabrielolympie/VisualAIFlows/assets/46057918/5d04deb9-84f4-492c-9fba-407cc58cd3bb)
+
 # Release Note PreAlpha
 As of today this repo enables:
 - Creation of python function, and implementation of rivet subgraphs that call these function through a http request to fast API
@@ -20,6 +22,8 @@ Currently implemented routes:
 - Clone this repo
 - Install the requirements
 - Move into VisualAIFlows/visualflows
+
+- Optional: Install ollama: curl https://ollama.ai/install.sh | sh
 
 ## Basic Usage: Plug and play in rivet
 #### Update the presets
@@ -131,6 +135,7 @@ Using them concurrently to make inferences:
 - Design a flow framework that is homogenous with the current mecanisms
 - Add credits for other projects (thanks Ironclad, Ollama, Huggingface, Mistral, Meta)
 - Implement new routes for image generation, multimodel inputs etc.
+- Make a proper documentation
 
 # Hope you have fun with this toy project, enjoy!
 
