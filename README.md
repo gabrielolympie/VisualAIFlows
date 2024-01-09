@@ -8,6 +8,7 @@ As of today this repo enables:
 - Creation of python function, and implementation of rivet subgraphs that call these function through a http request to fast API
 - Easy to use helper to update a rivet project based on this
 - A playground that automatically load all the subgraphs created to ease their usage
+- preprompts that can be use in drag and drop once instantiated
 
 Currently implemented routes:
 - load_hf_hosted_model: a route to load a model that is hosted on huggingface (works with free tier model like mixtral)
@@ -69,6 +70,14 @@ values_type: either string or number, all values should be of the same type
 When the yaml is created, you can add it to the backend.py file, in the presets list, then run python backend.py to update the project
 ![image](https://github.com/gabrielolympie/VisualAIFlows/assets/46057918/ec033b43-0f10-48de-b288-c945b5fa2fcb)
 
+##### Prompts
+Prompts are similar to prompt templates, and allows you to predefine some prompts to be loaded as drag and drop items in the play ground.
+To add a prompt, it is quite simple, just go in models/prompts, and either duplicate one of the existing files or edit one.
+These are basic yaml in shape name:prompt. The name will be used to name the prompt in the playground.
+
+![image](https://github.com/gabrielolympie/VisualAIFlows/assets/46057918/a9bfe5e2-6b64-404b-be64-449ddda694a5)
+
+
 ##### Methods
 Methods are input output components that call a fastapi route, and return the outputs. They are based both on the libs and models/methods folders
 
@@ -120,6 +129,9 @@ The playground:
 
 A presets:
 ![image](https://github.com/gabrielolympie/VisualAIFlows/assets/46057918/3c24e5b9-f7fb-482a-bd63-639a95b153d2)
+
+Preprompts:
+![image](https://github.com/gabrielolympie/VisualAIFlows/assets/46057918/b6b007e6-98c9-41b0-b859-2481ccea6cf2)
 
 A methods:
 ![image](https://github.com/gabrielolympie/VisualAIFlows/assets/46057918/9d8c209b-2f37-4ed3-8c34-c3424d95a991)
