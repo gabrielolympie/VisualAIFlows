@@ -1,0 +1,9 @@
+concatenate: [
+  "{{ prompt1 }}",
+  "{{ prompt2 }}"
+]
+
+phi_prompt: [
+  'Instruct: {{ prompt }}',
+  'Output: '
+]

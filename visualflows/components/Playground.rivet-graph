@@ -2,38 +2,158 @@ version: 4
 data:
     metadata:
         description: Playground
-        id: fkNyEWMNcqvtno3aLQONC
+        id: lHVs9V2cS1IgD_5ynf-hr
         name: Playground
     nodes:
-        '[cOO4QRFhL7mP9XUePraXI]:comment "Playground"':
+        '[-Kgzr6m-KkKhYTAuScqyj]:comment "Playground"':
             data:
                 backgroundColor: rgba(254,152,154,0.3)
                 color: rgba(255,255,255,1)
                 height: 600
                 text: "## Methods"
             visualData: 200/200/15600/600//
-        '[sPDIQXpG1smPze_Eq52fg]:comment "Playground"':
+        '[nvadC9oKvNV3jii2V_dgK]:comment "Playground"':
             data:
                 backgroundColor: rgba(230,254,115,0.3)
                 color: rgba(255,255,255,1)
-                height: 600
+                height: 1200
                 text: "## Prompts"
-            visualData: 200/3200/15600/600//
-        '[Z45I_wb2nh4JEmqvEtQwS]:comment "Playground"':
+            visualData: 200/2800/15600/1200//
+        '[INwMCJQoQqKtpMhCtP8Vo]:comment "Playground"':
             data:
                 backgroundColor: rgba(120,245,206,0.3)
                 color: rgba(255,255,255,1)
-                height: 2300
+                height: 1900
                 text: "## Presets"
-            visualData: 200/850/600/2300//
-        '[kecj1K-D56cMGHBVtw1NW]:comment "Playground"':
+            visualData: 200/850/600/1900//
+        '[Njp5kwOacC-s18TBtuedE]:comment "Playground"':
             data:
                 backgroundColor: rgba(62,52,255,0.3)
                 color: rgba(255,255,255,1)
-                height: 2300
+                height: 1900
                 text: "## Flows"
-            visualData: 850/850/14950/2300//
-        '[IZrA1Aajevjm8I-yZ3_Gl]:subGraph "auth_presets"':
+            visualData: 850/850/14950/1900//
+        '[NV3AHhF2Q6G-53_3CUCff]:text "evaluation_criterion"':
+            data:
+                text: "Based on the following instruction:\n{{ instruction }}\n\n\nPropose an evaluation criterion and 5 level of mastery (1 = Beginner, 5 = Master)\nUse the following template.\n\n\n###Score Rubrics:\n[criteria_description]\nScore 1: score1_description\nScore 2: score2_description\nScore 3: score3_description\nScore 4: score4_description\nScore 5: score5_description"
+            visualData: 450/3000/500/400//
+        '[SSzfPPYje3OK1x3QnIUnI]:text "concatenate"':
+            data:
+                text: "{{ prompt1 }}\n{{ prompt2 }}"
+            visualData: 1050/3000/500/400//
+        '[Be769Icl8icalgz9Xmp45]:text "phi_prompt"':
+            data:
+                text: "Instruct: {{ prompt }}\nOutput: "
+            visualData: 1050/3200/500/400//
+        '[a-EeW4nFe7EZCpb-OJhAh]:text "openchat_user"':
+            data:
+                text: "GPT4 Correct User: {{ prompt }}<|end_of_turn|>"
+            visualData: 1650/3000/500/400//
+        '[oH2DfpNE98x9fZ7hd-u_V]:text "openchat_assistant"':
+            data:
+                text: "GPT4 Correct Assistant: {{ prompt }}<|end_of_turn|>"
+            visualData: 1650/3200/500/400//
+        '[F6QWs53YWf9oVpKvzpDGA]:text "openchat_prompt"':
+            data:
+                text: "GPT4 Correct User: {{ prompt }}<|end_of_turn|>GPT4 Correct Assistant: "
+            visualData: 1650/3400/500/400//
+        '[sifZaEL-viqW6wNrK3yFQ]:text "openchat_math"':
+            data:
+                text: "Math Correct User: {{ prompt }}<|end_of_turn|>Math Correct Assistant: "
+            visualData: 1650/3600/500/400//
+        '[12qSPoBadH9Zkqnk8QOhW]:text "zephyr_system"':
+            data:
+                text: "<|system|>\n{{ prompt }}</s>"
+            visualData: 2250/3000/500/400//
+        '[hfS115SmPIjJQh3Xjv6wl]:text "zephyr_user"':
+            data:
+                text: "<|user|>\n{{ prompt }}</s>"
+            visualData: 2250/3200/500/400//
+        '[w5mU4w_DR-ElyabJPnBli]:text "zephyr_assistant"':
+            data:
+                text: "<|assistant|>\n{{ prompt }}</s>"
+            visualData: 2250/3400/500/400//
+        '[qahph1b5FoFGwm5tR-KTS]:text "zephyr_prompt"':
+            data:
+                text: "<|user|>\n{{ prompt }}</s>\n<|assistant|>\n"
+            visualData: 2250/3600/500/400//
+        '[gKr9IkvFnzReZIUl-u3zc]:text "chatml_system"':
+            data:
+                text: "<|im_start|>system\n{{ prompt }}<|im_end|>"
+            visualData: 2850/3000/500/400//
+        '[laU4AzDyGHcmLgwer_O_H]:text "chatml_user"':
+            data:
+                text: "<|im_start|>user\n{{ prompt }}<|im_end|>"
+            visualData: 2850/3200/500/400//
+        '[334CxXmy191AyDQoakL9T]:text "chatml_assistant"':
+            data:
+                text: "<|im_start|>assistant\n{{ prompt }}<|im_end|>"
+            visualData: 2850/3400/500/400//
+        '[V4X1gERc6Zh-Dy8wrjMoS]:text "chatml_prompt"':
+            data:
+                text: "<|im_start|>user\n{{ prompt }}<|im_end|>\n<|im_start|>assistant\n"
+            visualData: 2850/3600/500/400//
+        '[KA9kbrxjzbB4mO5EHO2xc]:text "magicoder_system"':
+            data:
+                text: "{{ prompt }}"
+            visualData: 3450/3000/500/400//
+        '[ol_lyoAqkC1JlOnOgvjyw]:text "magicoder_user"':
+            data:
+                text: "@@ Instruction\n{{ prompt }}\n\n"
+            visualData: 3450/3200/500/400//
+        '[q2WFJUxModabywNU3Hw3A]:text "magicoder_assistant"':
+            data:
+                text: "@@ Response\n{{ prompt }}\n\n"
+            visualData: 3450/3400/500/400//
+        '[PttlY8eP2Njlic8D3-KT7]:text "magicoder_prompt"':
+            data:
+                text: "@@ Instruction\n{{ prompt }}\n\n\n@@ Response\\n"
+            visualData: 3450/3600/500/400//
+        '[qj5CCGcDmxTdice_iPfAE]:text "magicoder_python_prompt"':
+            data:
+                text: "@@ Instruction\n{{ prompt }}\n\n\n@@ Response\n\n```python"
+            visualData: 3450/3800/500/400//
+        '[qyL4TcYubaezsZQREonrI]:text "mistral_system"':
+            data:
+                text: "<s>{{ prompt }}"
+            visualData: 4050/3000/500/400//
+        '[x1SnfY43-voqL63qTjxCc]:text "mistral_user"':
+            data:
+                text: " [INST] {{ prompt }} [/INST] "
+            visualData: 4050/3200/500/400//
+        '[uKRCiCGgVlHxrD5qtDQW3]:text "mistral_assistant"':
+            data:
+                text: "{{ prompt }}</s>"
+            visualData: 4050/3400/500/400//
+        '[AMBVMehHORkslf6cJLyN5]:text "mistral_prompt"':
+            data:
+                text: " [INST] {{ prompt }} [/INST] "
+            visualData: 4050/3600/500/400//
+        '[Tb7y7HsFebbAfw-bEU_Uh]:text "vicuna_system"':
+            data:
+                text: "### System:\n{{ prompt }}\n\n"
+            visualData: 4650/3000/500/400//
+        '[DFE-kP1rtfGrSRgC4djzL]:text "vicuna_user"':
+            data:
+                text: "### User:\n{{ prompt }}\n\n"
+            visualData: 4650/3200/500/400//
+        '[q9yxK1dI2HcL_toamI59O]:text "vicuna_assistant"':
+            data:
+                text: "### Assistant:\n{{ prompt }}\n\n"
+            visualData: 4650/3400/500/400//
+        '[u_isgLKlbyWOJVNwkCBdp]:text "vicuna_prompt"':
+            data:
+                text: "### User:\n{{ prompt }}\n\n\n### Assistant:\\n"
+            visualData: 4650/3600/500/400//
+        '[LqbzQAe6lLm9JwvYcfa4A]:text "prometheus_task"':
+            data:
+                text: "An instruction (might include an Input inside it), a response to evaluate, a reference answer that gets a score of 5, and a score rubric representing a evaluation criteria are given.\n1. Write a detailed feedback that assess the quality of the response strictly based on the given score rubric, not evaluating in general.\n2. After writing a feedback, write a score that is an integer between 1 and 5. You should refer to the score rubric.\n3. The output format should look as follows: 'Feedback: (write a feedback for criteria) [RESULT] (an integer number between 1 and 5)'\n4. Please do not generate any other opening, closing, and explanations."
+            visualData: 5250/3000/500/400//
+        '[N6sQlYkHnUYRE38Qr2gtz]:text "prometheus_prompt"':
+            data:
+                text: "###Task Description:\n{{ task }}\n\n###The instruction to evaluate:\n{{ instruction }}\n\n###Response to evaluate:\n{{ response }}\n\n###Reference Answer (Score 5):\n{{ reference_answer }}\n\n###Score Rubrics:\n{{ criteria_description }}\n\n###Feedback: \n"
+            visualData: 5250/3200/500/400//
+        '[ui1IkPgTtgP_ByH4A4ik-]:subGraph "auth_presets"':
             data:
                 graphId: 7NcPhV8OHI8jI3uzYn4fK
                 useAsGraphPartialOutput: false
@@ -41,7 +161,7 @@ data:
                 height: 400
             outgoingConnections:
             visualData: 250/1000/500/400//
-        '[2yiR8ugGEBxFcW9GxswSG]:subGraph "hf_open_llm_presets"':
+        '[Kd-mdgFSnrSBodE2BgwT2]:subGraph "hf_open_llm_presets"':
             data:
                 graphId: W5FJJpKxAOSVtyvtx1BQj
                 useAsGraphPartialOutput: false
@@ -49,7 +169,7 @@ data:
                 height: 400
             outgoingConnections:
             visualData: 250/1250/500/400//
-        '[SfcauPNqfdRqHJGTIyRAM]:subGraph "stop_sequences_presets"':
+        '[vBzibou73A4Tu_FHZxgfz]:subGraph "stop_sequences_presets"':
             data:
                 graphId: 5DnEtyedoghg1QyfYSjRx
                 useAsGraphPartialOutput: false
@@ -57,7 +177,7 @@ data:
                 height: 400
             outgoingConnections:
             visualData: 250/1500/500/400//
-        '[1kQJi7smlYWh644NNaq_f]:subGraph "temperature_presets"':
+        '[-aGUyBZYNmg_I5jK8Pl8-]:subGraph "temperature_presets"':
             data:
                 graphId: Zwrmg-p5r5TrkZkbntZuO
                 useAsGraphPartialOutput: false
@@ -65,7 +185,7 @@ data:
                 height: 400
             outgoingConnections:
             visualData: 250/1750/500/400//
-        '[l3wUqrK1b6jOjRJoePB58]:subGraph "ollama_llm_presets"':
+        '[SeSlaCTupIwIXZPrER82H]:subGraph "ollama_llm_presets"':
             data:
                 graphId: W5FJPpKQAOaVtyvtx1BQj
                 useAsGraphPartialOutput: false
@@ -73,7 +193,7 @@ data:
                 height: 400
             outgoingConnections:
             visualData: 250/2000/500/400//
-        '[qPsOD_ANiK-QiomYjlqIG]:subGraph "context_len_presets"':
+        '[fRRTWZiRG55YBxAjFxMYO]:subGraph "context_len_presets"':
             data:
                 graphId: FKfBEDxsK3dcCEApDArJ1
                 useAsGraphPartialOutput: false
@@ -81,7 +201,7 @@ data:
                 height: 400
             outgoingConnections:
             visualData: 250/2250/500/400//
-        '[8hezclQ89pYYXaXZxOqhz]:subGraph "load_hf_hosted_model"':
+        '[51a1iVCxJ5LRLK-DC-9al]:subGraph "load_hf_hosted_model"':
             data:
                 graphId: TtkuL2gcFK_cH_F3_Ufj4
                 useAsGraphPartialOutput: false
@@ -89,7 +209,7 @@ data:
                 height: 400
             outgoingConnections:
             visualData: 250/400/500/400//
-        '[B1u4ai6pc5dBrVt2c-75B]:subGraph "load_ollama_model"':
+        '[BM3V8e82Voy_IyWXPK3zL]:subGraph "load_ollama_model"':
             data:
                 graphId: TtkuL2zft19_cH_F3_Ufj4
                 useAsGraphPartialOutput: false
@@ -97,7 +217,7 @@ data:
                 height: 400
             outgoingConnections:
             visualData: 850/400/500/400//
-        '[hH85gUgmZomHwqdR3e4PQ]:subGraph "load_whisper"':
+        '[GFXLqibtNmHg8fmTgk8sV]:subGraph "load_whisper"':
             data:
                 graphId: ssYNXMPG88iEvKK2Z-Ihu
                 useAsGraphPartialOutput: false
@@ -105,7 +225,7 @@ data:
                 height: 400
             outgoingConnections:
             visualData: 1450/400/500/400//
-        '[Qy6taMggvwpKLbUa4XLqt]:subGraph "run_prompt"':
+        '[gvTW42eJTZDDEOdfT62Nt]:subGraph "run_prompt"':
             data:
                 graphId: ssYnXDDG8hiEvKK2Z-ILu
                 useAsGraphPartialOutput: false
@@ -113,19 +233,27 @@ data:
                 height: 400
             outgoingConnections:
             visualData: 2050/400/500/400//
-        '[VmnB5Y3sxfFJtRboekCYg]:subGraph "transcribe"':
+        '[flOrkisWJMmt2HD5PVPJ7]:subGraph "run_prompt_stream"':
+            data:
+                graphId: ssYnXDaG8Mi2vKK2Z-ILu
+                useAsGraphPartialOutput: false
+                useErrorOutput: false
+                height: 400
+            outgoingConnections:
+            visualData: 2650/400/500/400//
+        '[OUkHVcpB7lRBQW4-LcMn3]:subGraph "transcribe"':
             data:
                 graphId: ssYnXODjAmiEvKK2Z-ILu
                 useAsGraphPartialOutput: false
                 useErrorOutput: false
                 height: 400
             outgoingConnections:
-            visualData: 2650/400/500/400//
-        '[5k3l5-N5dfgSbojo-g_3t]:subGraph "run_code_with_error"':
+            visualData: 3250/400/500/400//
+        '[z3hhBcYpkDrKv4IpUOF2y]:subGraph "run_code_with_error"':
             data:
                 graphId: 8ibqxj_6Nx-cjTaWBG4pn
                 useAsGraphPartialOutput: false
                 useErrorOutput: false
                 height: 400
             outgoingConnections:
-            visualData: 3250/400/500/400//
+            visualData: 3850/400/500/400//

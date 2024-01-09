@@ -5,7 +5,7 @@ data:
         id: W5FJJpKxAOSVtyvtx1BQj
         name: presets/hf_hosted_text_gen
     nodes:
-        '[-jWQWanU3J2BjXyLHFFIM]:object "Object"':
+        '[jaAFdKp6EUcIgto6gm_SJ]:object "Object"':
             data:
                 jsonTemplate: |-
                     {
@@ -15,31 +15,31 @@ data:
                     }
             
             outgoingConnections:
-                      - output->"Destructure" zchwpHNyn6ocAcxbldC7S/object
+                      - output->"Destructure" ja7SCYIz5haGYgkPIsuWd/object
             
             visualData: 0/0/400/800//
-        '[zchwpHNyn6ocAcxbldC7S]:destructure "Destructure"':
+        '[ja7SCYIz5haGYgkPIsuWd]:destructure "Destructure"':
             data:
                 paths:
                       - mixtral_8x7b_instruct_01
                       - zephyr_beta
                       - star_chat_beta    
             outgoingConnections:
-                      - match_0->"Graph Output" rXmOUXkkd5Y7MNVoNqbO5/value
-                      - match_1->"Graph Output" zIAhB28fEiBXic3tABokF/value
-                      - match_2->"Graph Output" k_syPibEWpZ1QCt1eAEDi/value    
+                      - match_0->"Graph Output" Z8l5OM_SUTyk_MdNqNMI4/value
+                      - match_1->"Graph Output" NEwerVJjd_YDYIbkjOCAq/value
+                      - match_2->"Graph Output" nvks3MrNYltpfkp5MYe9-/value    
             visualData: 500/0/400/800//
-        '[k_syPibEWpZ1QCt1eAEDi]:graphOutput "Graph Output"':
+        '[nvks3MrNYltpfkp5MYe9-]:graphOutput "Graph Output"':
             data:
                 dataType: string
                 id: star_chat_beta
             visualData: 1000/300/400/800//
-        '[zIAhB28fEiBXic3tABokF]:graphOutput "Graph Output"':
+        '[NEwerVJjd_YDYIbkjOCAq]:graphOutput "Graph Output"':
             data:
                 dataType: string
                 id: zephyr_beta
             visualData: 1000/150/400/800//
-        '[rXmOUXkkd5Y7MNVoNqbO5]:graphOutput "Graph Output"':
+        '[Z8l5OM_SUTyk_MdNqNMI4]:graphOutput "Graph Output"':
             data:
                 dataType: string
                 id: mixtral_8x7b_instruct_01

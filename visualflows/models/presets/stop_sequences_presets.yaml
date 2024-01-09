@@ -7,4 +7,5 @@ values:
   2 <|im_end|>: "<|im_end|>"
   3 3xhashtag: "###"
   4 2xhashtag: "##"
+  5 <|end_of_turn|>: "<|end_of_turn|>"
 values_type: string

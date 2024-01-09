@@ -1,0 +1,22 @@
+magicoder_system: [
+  "{{ prompt }}",
+]
+magicoder_user: [
+  '@@ Instruction',
+  "{{ prompt }}\\n\\n",
+]
+magicoder_assistant: [
+  '@@ Response',
+  "{{ prompt }}\\n\\n",
+]
+magicoder_prompt: [
+  '@@ Instruction',
+  "{{ prompt }}\\n\\n",
+  '@@ Response\\n',
+]
+magicoder_python_prompt: [
+  '@@ Instruction',
+  "{{ prompt }}\\n\\n",
+  '@@ Response\n',
+  '```python'
+]

@@ -1,0 +1,13 @@
+evaluation_criterion: [
+  "Based on the following instruction:",
+  "{{ instruction }}\\n\\n",
+  "Propose an evaluation criterion and 5 level of mastery (1 = Beginner, 5 = Master)",
+  "Use the following template.\\n\\n",
+  "###Score Rubrics:",
+  "[criteria_description]",
+  "Score 1: score1_description",
+  "Score 2: score2_description",
+  "Score 3: score3_description",
+  "Score 4: score4_description",
+  "Score 5: score5_description",
+]

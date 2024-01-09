@@ -5,7 +5,7 @@ data:
         id: Zwrmg-p5r5TrkZkbntZuO
         name: presets/temperature
     nodes:
-        '[FD8Es1tRGdHQMBmFRrEiG]:object "Object"':
+        '[x1u8NFcGtA2MCMrfz4zYI]:object "Object"':
             data:
                 jsonTemplate: |-
                     {
@@ -17,10 +17,10 @@ data:
                     }
             
             outgoingConnections:
-                      - output->"Destructure" yOhUOuZFRZQrcN_nYXsT5/object
+                      - output->"Destructure" slowcpC6qyzmUI74GnTge/object
             
             visualData: 0/0/400/800//
-        '[yOhUOuZFRZQrcN_nYXsT5]:destructure "Destructure"':
+        '[slowcpC6qyzmUI74GnTge]:destructure "Destructure"':
             data:
                 paths:
                       - 0 Formal
@@ -29,33 +29,33 @@ data:
                       - 3 Drunk
                       - 4 Crazy    
             outgoingConnections:
-                      - match_0->"Graph Output" hkEdcZ_uDRzomrdK9c9Wz/value
-                      - match_1->"Graph Output" Qe2rFJyRkaegRylebQRkd/value
-                      - match_2->"Graph Output" AnTOn6AJEiMG-V2rwrqoH/value
-                      - match_3->"Graph Output" _NA__xZ4GT2LZpe9XhEwU/value
-                      - match_4->"Graph Output" t16-MM3mRoNZdHNJK1p9Q/value    
+                      - match_0->"Graph Output" DhQTnkSRFUf14RgDam7fG/value
+                      - match_1->"Graph Output" vQ3y-CB6KGGTms2whIegw/value
+                      - match_2->"Graph Output" GaM5oNORrlcaPRW23qumS/value
+                      - match_3->"Graph Output" TigG7AwVW7sBTcC9PnCXk/value
+                      - match_4->"Graph Output" QBEwochfOVYHuEQcKQRxw/value    
             visualData: 500/0/400/800//
-        '[t16-MM3mRoNZdHNJK1p9Q]:graphOutput "Graph Output"':
+        '[QBEwochfOVYHuEQcKQRxw]:graphOutput "Graph Output"':
             data:
                 dataType: number
                 id: 4 Crazy
             visualData: 1000/600/400/800//
-        '[_NA__xZ4GT2LZpe9XhEwU]:graphOutput "Graph Output"':
+        '[TigG7AwVW7sBTcC9PnCXk]:graphOutput "Graph Output"':
             data:
                 dataType: number
                 id: 3 Drunk
             visualData: 1000/450/400/800//
-        '[AnTOn6AJEiMG-V2rwrqoH]:graphOutput "Graph Output"':
+        '[GaM5oNORrlcaPRW23qumS]:graphOutput "Graph Output"':
             data:
                 dataType: number
                 id: 2 Creative
             visualData: 1000/300/400/800//
-        '[Qe2rFJyRkaegRylebQRkd]:graphOutput "Graph Output"':
+        '[vQ3y-CB6KGGTms2whIegw]:graphOutput "Graph Output"':
             data:
                 dataType: number
                 id: 1 Balanced
             visualData: 1000/150/400/800//
-        '[hkEdcZ_uDRzomrdK9c9Wz]:graphOutput "Graph Output"':
+        '[DhQTnkSRFUf14RgDam7fG]:graphOutput "Graph Output"':
             data:
                 dataType: number
                 id: 0 Formal

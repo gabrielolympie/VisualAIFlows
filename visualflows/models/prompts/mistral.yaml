@@ -1,0 +1,12 @@
+mistral_system: [
+  "<s>{{ prompt }}"
+]
+mistral_user: [
+  " [INST] {{ prompt }} [/INST] "
+]
+mistral_assistant: [
+  "{{ prompt }}</s>"
+]
+mistral_prompt: [
+  " [INST] {{ prompt }} [/INST] "
+]

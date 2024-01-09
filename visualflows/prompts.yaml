@@ -1,0 +1,143 @@
+## Operation Prompts
+concatenate: [
+  "{{ prompt1 }}",
+  "{{ prompt2 }}"
+]
+
+## Task Prompts
+evaluation_criterion: [
+  "Based on the following instruction:",
+  "{{ instruction }}\n\n",
+  "Propose an evaluation criterion and 5 level of mastery (1 = Beginner, 5 = Master)",
+  "Use the following template.",
+  "",
+  "###Score Rubrics:",
+  "[criteria_description]",
+  "Score 1: score1_description",
+  "Score 2: score2_description",
+  "Score 3: score3_description",
+  "Score 4: score4_description",
+  "Score 5: score5_description",
+]
+
+## Special Tokens Prompts
+zephyr_system: [
+  "<|system|>",
+  "{{ prompt }}</s>"
+]
+zephyr_user: [
+  "<|user|>",
+  "{{ prompt }}</s>",
+]
+zephyr_assistant: [
+  "<|assistant|>",
+  "{{ prompt }}</s>"
+]
+zephyr_prompt: [
+  "<|user|>",
+  "{{ prompt }}</s>",
+  "<|assistant|>\n",
+]
+
+chatml_system: [
+  "<|im_start|>system",
+  "{{ prompt }}<|im_end|>"
+]
+chatml_user: [
+  "<|im_start|>user",
+  "{{ prompt }}<|im_end|>"
+]
+chatml_assistant: [
+  "<|im_start|>assistant",
+  "{{ prompt }}<|im_end|>"
+]
+chatml_prompt: [
+  "<|im_start|>user",
+  "{{ prompt }}<|im_end|>"
+  "<|im_start|>assistant\n",
+]
+
+mistral_system: [
+  "<s>{{ prompt }}"
+]
+mistral_user: [
+  " [INST] {{ prompt }} [/INST] "
+]
+mistral_assistant: [
+  "{{ prompt }}</s>"
+]
+mistral_prompt: [
+  " [INST] {{ prompt }} [/INST] "
+]
+
+magicoder_system: [
+  "{{ prompt }}",
+]
+magicoder_user: [
+  '@@ Instruction',
+  "{{ prompt }}\n\n",
+]
+magicoder_assistant: [
+  '@@ Response',
+  "{{ prompt }}\n\n",
+]
+magicoder_prompt: [
+  '@@ Instruction',
+  "{{ prompt }}\n\n",
+  '@@ Response\n',
+]
+magicoder_python_prompt: [
+  '@@ Instruction',
+  "{{ prompt }}\n\n",
+  '@@ Response\n',
+  '```python'
+]
+
+vicuna_system: [
+  '### System:'
+  "{{ prompt }}\n\n",
+]
+vicuna_user: [
+  '### User:'
+  "{{ prompt }}\n\n",
+]
+vicuna_assistant: [
+  '### Assistant:'
+  "{{ prompt }}\n\n",
+]
+vicuna_prompt: [
+  '### User:',
+  "{{ prompt }}\n\n",
+  '### Assistant:\n'
+]
+
+phi_prompt: [
+  'Instruct: {{ prompt }}',
+  'Output: '
+]
+
+prometheus_task: [
+  "An instruction (might include an Input inside it), a response to evaluate, a reference answer that gets a score of 5, and a score rubric representing a evaluation criteria are given.",
+  "1. Write a detailed feedback that assess the quality of the response strictly based on the given score rubric, not evaluating in general.",
+  "2. After writing a feedback, write a score that is an integer between 1 and 5. You should refer to the score rubric.",
+  "3. The output format should look as follows: 'Feedback: (write a feedback for criteria) [RESULT] (an integer number between 1 and 5)'",
+  "4. Please do not generate any other opening, closing, and explanations.",
+]
+prometheus_prompt: [
+  "###Task Description:",
+  "{{ task }}",
+  "",
+  "###The instruction to evaluate:",
+  "{{ instruction }}",
+  "",
+  "###Response to evaluate:",
+  "{{ response }}",
+  "",
+  "###Reference Answer (Score 5):",
+  "{{ reference_answer }}",
+  "",
+  "###Score Rubrics:",
+  "{{ criteria_description }}",
+  "",
+  "###Feedback: ",
+]

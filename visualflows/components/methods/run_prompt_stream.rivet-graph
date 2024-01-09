@@ -1,43 +1,43 @@
 version: 4
 data:
     metadata:
-        description: transcribe
-        id: ssYnXODjAmiEvKK2Z-ILu
-        name: methods/transcribe
+        description: run_prompt_stream
+        id: ssYnXDaG8Mi2vKK2Z-ILu
+        name: methods/run_prompt_stream
     nodes:
-        '[54GiyQwtAvLJd7X_Ni-OV]:graphInput "path_to_audio"':
+        '[D52YJqomw8mj5W4ZpxITd]:graphInput "prompt"':
             data:
                 dataType: string
                 defaultValue: Hello World
                 editor: string
-                id: path_to_audio
+                id: prompt
                 useDefaultValueInput: false
             outgoingConnections:
-              - 'data->"Object" nDGnaCn97LUskU4qcmGKz/ path_to_audio '
+              - 'data->"Object" bH1itO-C-XbVJzEOwMoVw/ prompt '
             visualData: -500/150/400/800//
-        '[SV7SKAKokmDz7zuFw45Ik]:graphInput "identifier"':
+        '[5Pp1Qiz-Wn2LjmjywuL18]:graphInput "identifier"':
             data:
                 dataType: string
-                defaultValue: whisper
+                defaultValue: zephyr
                 editor: string
                 id: identifier
                 useDefaultValueInput: false
             outgoingConnections:
-              - 'data->"Object" nDGnaCn97LUskU4qcmGKz/ identifier '
+              - 'data->"Object" bH1itO-C-XbVJzEOwMoVw/ identifier '
             visualData: -500/0/400/800//
-        '[nDGnaCn97LUskU4qcmGKz]:object "Object"':
+        '[bH1itO-C-XbVJzEOwMoVw]:object "Object"':
             data:
                 jsonTemplate: |-
                     {
                         "identifier": {{ identifier }},
-                        "path_to_audio": {{ path_to_audio }}
+                        "prompt": {{ prompt }}
                     }
             
             outgoingConnections:
-                      - output->"HTTP CALL" xBdEg1_Dzk7BD4s3biBry/req_body
+                      - output->"HTTP CALL" 2exNVhMBuqMxdzCZ9JZI-/req_body
             
             visualData: 0/0/400/800//
-        '[fDvqXvTCuGBJUKJ61scmY]:object "Object"':
+        '[k_39rRiGB3BybbjX6eDUe]:object "Object"':
             data:
                 jsonTemplate: |-
                     {
@@ -45,10 +45,10 @@ data:
                     }
             
             outgoingConnections:
-                      - output->"HTTP CALL" xBdEg1_Dzk7BD4s3biBry/headers
+                      - output->"HTTP CALL" 2exNVhMBuqMxdzCZ9JZI-/headers
             
             visualData: 0/-200/400/800//
-        '[xBdEg1_Dzk7BD4s3biBry]:httpCall "HTTP CALL"':
+        '[2exNVhMBuqMxdzCZ9JZI-]:httpCall "HTTP CALL"':
             data:
                 body: ""
                 errorOnNon200: true
@@ -56,15 +56,15 @@ data:
                 jsonTemplate: ""
                 method: POST
                 text: ""
-                url: http://localhost:8000/methods/transcribe
+                url: http://localhost:8000/methods/run_prompt_stream
                 useBodyInput: true
                 useHeadersInput: true
                 useMethodInput: false
                 useUrlInput: false
             outgoingConnections:
-                      - res_body->"Graph Output" t-iTMM4JvyQZVqoNOjmzH/value
+                      - res_body->"Graph Output" NRRdB54t1pmVmRvyESlyr/value
             visualData: 500/0/400/800//
-        '[t-iTMM4JvyQZVqoNOjmzH]:graphOutput "Graph Output"':
+        '[NRRdB54t1pmVmRvyESlyr]:graphOutput "Graph Output"':
             data:
                 dataType: string
                 id: identifier

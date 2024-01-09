@@ -5,7 +5,7 @@ data:
         id: ssYnXDDG8hiEvKK2Z-ILu
         name: methods/run_prompt
     nodes:
-        '[xQSfBjnSB9LKySdAptA_5]:graphInput "prompt"':
+        '[foc2ullpqDA8iMgz_lfU7]:graphInput "prompt"':
             data:
                 dataType: string
                 defaultValue: Hello World
@@ -13,9 +13,9 @@ data:
                 id: prompt
                 useDefaultValueInput: false
             outgoingConnections:
-              - 'data->"Object" sJRzO-voz2XWsnd9eSwud/ prompt '
+              - 'data->"Object" 8t7oH-ARUFodIJJU6cGPn/ prompt '
             visualData: -500/150/400/800//
-        '[VJFP47kDaDWRa3NXwQaMv]:graphInput "identifier"':
+        '[p83wVHJv6wBYmMTmfzqOF]:graphInput "identifier"':
             data:
                 dataType: string
                 defaultValue: zephyr
@@ -23,9 +23,9 @@ data:
                 id: identifier
                 useDefaultValueInput: false
             outgoingConnections:
-              - 'data->"Object" sJRzO-voz2XWsnd9eSwud/ identifier '
+              - 'data->"Object" 8t7oH-ARUFodIJJU6cGPn/ identifier '
             visualData: -500/0/400/800//
-        '[sJRzO-voz2XWsnd9eSwud]:object "Object"':
+        '[8t7oH-ARUFodIJJU6cGPn]:object "Object"':
             data:
                 jsonTemplate: |-
                     {
@@ -34,10 +34,10 @@ data:
                     }
             
             outgoingConnections:
-                      - output->"HTTP CALL" csibwSpNsQJ6l6UPZtAbg/req_body
+                      - output->"HTTP CALL" OybdX62QZEUgg-N5xdHUe/req_body
             
             visualData: 0/0/400/800//
-        '[yVtfHZgHCt-rGFMEVXu79]:object "Object"':
+        '[maHtZytd4F1torLgIBZaI]:object "Object"':
             data:
                 jsonTemplate: |-
                     {
@@ -45,10 +45,10 @@ data:
                     }
             
             outgoingConnections:
-                      - output->"HTTP CALL" csibwSpNsQJ6l6UPZtAbg/headers
+                      - output->"HTTP CALL" OybdX62QZEUgg-N5xdHUe/headers
             
             visualData: 0/-200/400/800//
-        '[csibwSpNsQJ6l6UPZtAbg]:httpCall "HTTP CALL"':
+        '[OybdX62QZEUgg-N5xdHUe]:httpCall "HTTP CALL"':
             data:
                 body: ""
                 errorOnNon200: true
@@ -62,9 +62,9 @@ data:
                 useMethodInput: false
                 useUrlInput: false
             outgoingConnections:
-                      - res_body->"Graph Output" HlG-zc33sWQEWMVRXtBVP/value
+                      - res_body->"Graph Output" S2euQX9vcCPbWMTr2mPwZ/value
             visualData: 500/0/400/800//
-        '[HlG-zc33sWQEWMVRXtBVP]:graphOutput "Graph Output"':
+        '[S2euQX9vcCPbWMTr2mPwZ]:graphOutput "Graph Output"':
             data:
                 dataType: string
                 id: identifier

@@ -1,0 +1,17 @@
+vicuna_system: [
+  '### System:',
+  "{{ prompt }}\\n\\n",
+]
+vicuna_user: [
+  '### User:',
+  "{{ prompt }}\\n\\n",
+]
+vicuna_assistant: [
+  '### Assistant:',
+  "{{ prompt }}\\n\\n",
+]
+vicuna_prompt: [
+  '### User:',
+  "{{ prompt }}\\n\\n",
+  '### Assistant:\\n'
+]

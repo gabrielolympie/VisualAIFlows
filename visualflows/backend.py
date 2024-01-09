@@ -8,6 +8,7 @@ from libs.text_generation import (
     load_hf_hosted_model,
     load_ollama_model,
     run_prompt,
+    run_prompt_stream,
 )
 
 from rivet_graph_utils import build_project
@@ -38,6 +39,19 @@ with open(f"./models/presets/auth_presets.yaml", "w") as f:
     yaml.dump(auth, f)
 
 
+## Prompts
+prompts=[
+    'task',
+    'operation',
+    'openchat',
+    'zephyr',
+    'chatml',
+    'magicoder',
+    'mistral',
+    'vicuna',
+    'prometheus_eval',
+]
+
 ## Choosing what presets use in the project
 presets=[
     'auth_presets',
@@ -57,6 +71,7 @@ methods = {
     'load_ollama_model':load_ollama_model,
     "load_whisper":load_whisper,
     "run_prompt": run_prompt,
+    "run_prompt_stream": run_prompt_stream,
     "transcribe": transcribe,
     "run_code_with_error":run_code_with_error,
 }
@@ -64,6 +79,11 @@ methods = {
 ## Not implemented yet
 flows = {}
 
+# Add prompt
+prompt_templates={}
+for prompt in prompts:
+    with open(f"./models/prompts/{prompt}.yaml", 'r') as file:
+        prompt_templates[prompt] = yaml.safe_load(file)
 
 # Add Methods
 for method in methods:
@@ -79,8 +99,9 @@ if __name__ == "__main__":
         presets,
         methods,
         flows,
+        prompts=prompt_templates,
         api_base="http://localhost:8000",
-        height=3000,
+        height=4200,
         width=16000,
         padding=200,
         secondary_padding=50,

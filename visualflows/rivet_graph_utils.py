@@ -73,6 +73,11 @@ sub_graph_template="""'[{node_id}]:subGraph "{graph_name}"':
     outgoingConnections:
     visualData: {x}/{y}/500/400//"""
 
+prompt_template="""'[{node_id}]:text "{graph_name}"':
+    data:
+        text: "{text}"
+    visualData: {x}/{y}/500/400//"""
+
 http_template="""'[{node_id}]:httpCall "HTTP CALL"':
     data:
         body: ""
@@ -88,6 +93,21 @@ http_template="""'[{node_id}]:httpCall "HTTP CALL"':
         useUrlInput: false
     outgoingConnections:{connections}
     visualData: 500/0/400/800//"""
+
+def make_prompt_template(
+    graph_name="",
+    text="",
+    v_padding=0,
+    h_padding=0,
+):
+    node_id=make_id()
+    return node_id, prompt_template.format(
+        node_id=node_id,
+        graph_name=graph_name,
+        text=text,
+        x=h_padding,
+        y=v_padding,
+    )
 
 def make_graph_input(name:str, datatype:str, value, connections:str, vertical_position:float=0):
     node_id=make_id()
@@ -253,15 +273,6 @@ def make_method_graph(path, api_base):
 
 def get_comments(height=4000, width=16000, padding=200, secondary_padding=50):
     comments={}
-    
-    # comments['playground']={
-    #     'background_color':'rgba(12,246,243,0.7)',
-    #     'text':"## Playground",
-    #     'v_padding':0,
-    #     'h_padding':0,
-    #     'height':height,
-    #     'width':width,
-    # }
     comments['methods']={
         'background_color':'rgba(254,152,154,0.3)',
         'text':"## Methods",
@@ -274,8 +285,8 @@ def get_comments(height=4000, width=16000, padding=200, secondary_padding=50):
         'background_color':'rgba(230,254,115,0.3)',
         'text':"## Prompts",
         'h_padding':padding,
-        'v_padding':height - padding - 600,
-        'height':600,
+        'v_padding':height - padding - 1200,
+        'height':1200,
         'width':width - 2*padding,
     }
     comments['presets']={
@@ -283,7 +294,7 @@ def get_comments(height=4000, width=16000, padding=200, secondary_padding=50):
         'text':"## Presets",
         'v_padding':padding + 600 + secondary_padding,
         'h_padding':padding,
-        'height':height - 2*padding - 2*600 - 2 * secondary_padding,
+        'height':height - 2*padding - 3*600 - 2 * secondary_padding,
         'width':600,
     }
     comments['flows']={
@@ -291,12 +302,12 @@ def get_comments(height=4000, width=16000, padding=200, secondary_padding=50):
         'text':"## Flows",
         'h_padding':padding + 600 + secondary_padding,
         'v_padding':padding + 600 + secondary_padding,
-        'height':height - 2*padding - 2*600 - 2 * secondary_padding,
+        'height':height - 2*padding - 3*600 - 2 * secondary_padding,
         'width':width - 2*padding - 600 - secondary_padding,
     }
     return comments
 
-def make_playground_graph(graph_name, graph_ids, height=4000, width=16000, padding=200, secondary_padding=50):
+def make_playground_graph(graph_name, graph_ids,prompts={}, height=4000, width=16000, padding=200, secondary_padding=50):
     graph_id=make_id()
     graph=playground_template.format(name=graph_name, graph_id=graph_id)
     
@@ -306,8 +317,25 @@ def make_playground_graph(graph_name, graph_ids, height=4000, width=16000, paddi
     graph+= indent('\n'+'\n'.join(comments), 1)
     
     nodes=[]
+    ## Adding Prompt Templates
+    g,p=0,0
+    for group in prompts:
+        for prompt in prompts[group]:
+            prompt_name=prompt
+            
+            prompt_content='\\n'.join(prompts[group][prompt_name])
+            node_id, node=make_prompt_template(
+                graph_name=prompt_name,
+                text=prompt_content,
+                v_padding=height - padding - 1200 + 200 + 200*p,
+                h_padding=padding + padding + 600*g + 50,
+            )
+            nodes.append(node)
+            p+=1
+        p=0
+        g+=1
+
     p,m,f=0,0,0
-    
     for k,v in graph_ids.items():
         if k.split('/')[0]=='presets':
             node_id, node=make_sub_graph(graph_name=k.split('/')[1],graph_id=v, horizontal_position=padding + 50, vertical_position=1000+250*p)
@@ -344,8 +372,8 @@ def export_method(method, api_base="http://localhost:8000"):
 def export_flow(flow, api_base="http://localhost:8000"):
     pass
 
-def export_playground(graph_name, graph_ids, height=4000, width=16000, padding=200, secondary_padding=50):
-    graph_id, graph=make_playground_graph(graph_name=graph_name, graph_ids=graph_ids, height=height, width=width, padding=padding, secondary_padding=secondary_padding)
+def export_playground(graph_name, graph_ids,prompts={},  height=4000, width=16000, padding=200, secondary_padding=50):
+    graph_id, graph=make_playground_graph(graph_name=graph_name, graph_ids=graph_ids,prompts=prompts, height=height, width=width, padding=padding, secondary_padding=secondary_padding)
     standalone=root+indent(graph)
     with open(f'./components/{graph_name}.rivet-graph', 'w') as f:
         f.write(standalone)
@@ -397,6 +425,7 @@ def build_project(
     presets=[],
     methods=[],
     flows=[],
+    prompts={},
     api_base="http://localhost:8000",
     height=4000,
     width=16000,
@@ -425,7 +454,7 @@ def build_project(
         graph_ids[f'flows/{flow}']=graph_id
         graphs.append('\n'+graph_id+":"+graph)
 
-    playground_id, playground=export_playground("Playground", graph_ids)
+    playground_id, playground=export_playground("Playground", graph_ids, prompts=prompts,  height=height, width=width, padding=padding, secondary_padding=secondary_padding)
     graphs.append('\n'+playground_id+":"+indent(playground))
     
     graph=project_template.format(name=name, playground_id=playground_id) + indent("".join(graphs),2)

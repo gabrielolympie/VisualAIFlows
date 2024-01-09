@@ -1,0 +1,17 @@
+chatml_system: [
+  "<|im_start|>system",
+  "{{ prompt }}<|im_end|>"
+]
+chatml_user: [
+  "<|im_start|>user",
+  "{{ prompt }}<|im_end|>"
+]
+chatml_assistant: [
+  "<|im_start|>assistant",
+  "{{ prompt }}<|im_end|>"
+]
+chatml_prompt: [
+  "<|im_start|>user",
+  "{{ prompt }}<|im_end|>",
+  "<|im_start|>assistant\\n",
+]

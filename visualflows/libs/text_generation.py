@@ -5,6 +5,7 @@ from fastapi.responses import PlainTextResponse, StreamingResponse
 from langchain_community.llms import Ollama, HuggingFaceTextGenInference
 from langchain.callbacks.streaming_stdout import StreamingStdOutCallbackHandler
 from state import read_state, write_state, get_state
+import asyncio
 
 
 class OllamaModel(BaseModel):
@@ -67,9 +68,37 @@ async def load_hf_hosted_model(config: HFHostedInferenceModel):
 async def run_prompt(config: RunPromptModel):
     try:
         print(get_state())
-        x= read_state("objects")[
+        x= await read_state("objects")[
             config.identifier.replace('"', "")
-        ].predict(config.prompt)
+        ].apredict(config.prompt)
         return PlainTextResponse(x)
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+    
+# async def run_prompt_stream(config: RunPromptModel):
+#     try:
+#         config=config
+#         llm= read_state("objects")[
+#             config.identifier.replace('"', "")
+#         ]
+        
+#         return StreamingResponse(llm.astream(config.prompt), media_type="text/plain")
+#     except Exception as e:
+#         raise HTTPException(status_code=500, detail=str(e))
+    
+async def async_generator():
+    llm= read_state("objects")[
+        'tinyllama'
+    ]
+    result=llm.stream('tl.dr')
+    for token in result:
+        yield token
+
+class RunPromptStreamModel(BaseModel):
+    identifier: str='hello'
+
+async def run_prompt_stream(config:RunPromptStreamModel):
+    try:
+        return StreamingResponse(async_generator(), media_type="text/plain")
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))

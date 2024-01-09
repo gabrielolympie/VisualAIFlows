@@ -5,7 +5,7 @@ data:
         id: 5DnEtyedoghg1QyfYSjRx
         name: presets/stop_sequences
     nodes:
-        '[J3t-PQV4SGx13axWyOYff]:object "Object"':
+        '[ETz4YJP3iJzuISps1We2d]:object "Object"':
             data:
                 jsonTemplate: |-
                     {
@@ -13,49 +13,57 @@ data:
                         "1 ```":"```",
                         "2 <|im_end|>":"<|im_end|>",
                         "3 3xhashtag":"###",
-                        "4 2xhashtag":"##"
+                        "4 2xhashtag":"##",
+                        "5 <|end_of_turn|>":"<|end_of_turn|>"
                     }
             
             outgoingConnections:
-                      - output->"Destructure" MfGWjm76DW59_OGcwotyJ/object
+                      - output->"Destructure" pGQh1rYMOzetT4fLu__IQ/object
             
             visualData: 0/0/400/800//
-        '[MfGWjm76DW59_OGcwotyJ]:destructure "Destructure"':
+        '[pGQh1rYMOzetT4fLu__IQ]:destructure "Destructure"':
             data:
                 paths:
                       - 0 </s>
                       - 1 ```
                       - 2 <|im_end|>
                       - 3 3xhashtag
-                      - 4 2xhashtag    
+                      - 4 2xhashtag
+                      - 5 <|end_of_turn|>    
             outgoingConnections:
-                      - match_0->"Graph Output" zR9Vs8tTg7hnipEoQj4oi/value
-                      - match_1->"Graph Output" 3--ESKMyOUkb5HoK8LoZI/value
-                      - match_2->"Graph Output" lj1X-S-sqDkRCR1LxlupE/value
-                      - match_3->"Graph Output" PerG6fby4YD66ZsQmxm2k/value
-                      - match_4->"Graph Output" sz7J-b_lzOos9YkKo-Cu1/value    
+                      - match_0->"Graph Output" mveLfk3C_os-X2s4fwo8O/value
+                      - match_1->"Graph Output" 5VkWqRX3_X2oKDPUphyK2/value
+                      - match_2->"Graph Output" s9SyOl-GwolRucYUUuS-z/value
+                      - match_3->"Graph Output" f3VrnZx6YuBnACa6SbBtM/value
+                      - match_4->"Graph Output" FUjoD38rFncdandbDs8OM/value
+                      - match_5->"Graph Output" VYCFQH2ARk3zKe3x82bXe/value    
             visualData: 500/0/400/800//
-        '[sz7J-b_lzOos9YkKo-Cu1]:graphOutput "Graph Output"':
+        '[VYCFQH2ARk3zKe3x82bXe]:graphOutput "Graph Output"':
+            data:
+                dataType: string
+                id: 5 <|end_of_turn|>
+            visualData: 1000/750/400/800//
+        '[FUjoD38rFncdandbDs8OM]:graphOutput "Graph Output"':
             data:
                 dataType: string
                 id: 4 2xhashtag
             visualData: 1000/600/400/800//
-        '[PerG6fby4YD66ZsQmxm2k]:graphOutput "Graph Output"':
+        '[f3VrnZx6YuBnACa6SbBtM]:graphOutput "Graph Output"':
             data:
                 dataType: string
                 id: 3 3xhashtag
             visualData: 1000/450/400/800//
-        '[lj1X-S-sqDkRCR1LxlupE]:graphOutput "Graph Output"':
+        '[s9SyOl-GwolRucYUUuS-z]:graphOutput "Graph Output"':
             data:
                 dataType: string
                 id: 2 <|im_end|>
             visualData: 1000/300/400/800//
-        '[3--ESKMyOUkb5HoK8LoZI]:graphOutput "Graph Output"':
+        '[5VkWqRX3_X2oKDPUphyK2]:graphOutput "Graph Output"':
             data:
                 dataType: string
                 id: 1 ```
             visualData: 1000/150/400/800//
-        '[zR9Vs8tTg7hnipEoQj4oi]:graphOutput "Graph Output"':
+        '[mveLfk3C_os-X2s4fwo8O]:graphOutput "Graph Output"':
             data:
                 dataType: string
                 id: 0 </s>

@@ -1,0 +1,15 @@
+openchat_user: [
+  "GPT4 Correct User: {{ prompt }}<|end_of_turn|>"
+]
+
+openchat_assistant: [
+  "GPT4 Correct Assistant: {{ prompt }}<|end_of_turn|>"
+]
+
+openchat_prompt: [
+  "GPT4 Correct User: {{ prompt }}<|end_of_turn|>GPT4 Correct Assistant: "
+]
+
+openchat_math: [
+  "Math Correct User: {{ prompt }}<|end_of_turn|>Math Correct Assistant: "
+]

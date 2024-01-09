@@ -1,1222 +1,1243 @@
+
 version: 4
 data:
-  attachedData:
-    trivet:
-      testSuites: []
-      version: 1
-  graphs:
-    5DnEtyedoghg1QyfYSjRx:
-      metadata:
-        description: Stop Sequences
-        id: 5DnEtyedoghg1QyfYSjRx
-        name: presets/stop_sequences
-      nodes:
-        '[3--ESKMyOUkb5HoK8LoZI]:graphOutput "Graph Output"':
-          data:
-            dataType: string
-            id: 1 ```
-          visualData: 1000/150/400/800//
-        '[J3t-PQV4SGx13axWyOYff]:object "Object"':
-          data:
-            jsonTemplate: |-
-              {
-                  "0 </s>":"</s>",
-                  "1 ```":"```",
-                  "2 <|im_end|>":"<|im_end|>",
-                  "3 3xhashtag":"###",
-                  "4 2xhashtag":"##"
-              }
-          outgoingConnections:
-            - output->"Destructure" MfGWjm76DW59_OGcwotyJ/object
-          visualData: 0/0/400/800//
-        '[MfGWjm76DW59_OGcwotyJ]:destructure "Destructure"':
-          data:
-            paths:
-              - 0 </s>
-              - 1 ```
-              - 2 <|im_end|>
-              - 3 3xhashtag
-              - 4 2xhashtag
-          outgoingConnections:
-            - match_0->"Graph Output" zR9Vs8tTg7hnipEoQj4oi/value
-            - match_1->"Graph Output" 3--ESKMyOUkb5HoK8LoZI/value
-            - match_2->"Graph Output" lj1X-S-sqDkRCR1LxlupE/value
-            - match_3->"Graph Output" PerG6fby4YD66ZsQmxm2k/value
-            - match_4->"Graph Output" sz7J-b_lzOos9YkKo-Cu1/value
-          visualData: 500/0/400/800//
-        '[PerG6fby4YD66ZsQmxm2k]:graphOutput "Graph Output"':
-          data:
-            dataType: string
-            id: 3 3xhashtag
-          visualData: 1000/450/400/800//
-        '[lj1X-S-sqDkRCR1LxlupE]:graphOutput "Graph Output"':
-          data:
-            dataType: string
-            id: 2 <|im_end|>
-          visualData: 1000/300/400/800//
-        '[sz7J-b_lzOos9YkKo-Cu1]:graphOutput "Graph Output"':
-          data:
-            dataType: string
-            id: 4 2xhashtag
-          visualData: 1000/600/400/800//
-        '[zR9Vs8tTg7hnipEoQj4oi]:graphOutput "Graph Output"':
-          data:
-            dataType: string
-            id: 0 </s>
-          visualData: 1000/0/400/800//
-    7NcPhV8OHI8jI3uzYn4fK:
-      metadata:
-        description: auth tokens
-        id: 7NcPhV8OHI8jI3uzYn4fK
-        name: presets/auth_presets
-      nodes:
-        '[2HZiikex6tuy1M5HhWhOD]:graphOutput "Graph Output"':
-          data:
-            dataType: string
-            id: name
-          visualData: 1000/0/400/800//
-        '[TmRMEK28vbg91CFwZB-6F]:object "Object"':
-          data:
-            jsonTemplate: |-
-              {
-                  "name":"api_key"
-              }
-          outgoingConnections:
-            - output->"Destructure" tIY9avU8X8_N1XIYSH_IB/object
-          visualData: 0/0/400/800//
-        '[tIY9avU8X8_N1XIYSH_IB]:destructure "Destructure"':
-          data:
-            paths:
-              - name
-          outgoingConnections:
-            - match_0->"Graph Output" 2HZiikex6tuy1M5HhWhOD/value
-          visualData: 500/0/400/800//
-    8ibqxj_6Nx-cjTaWBG4pn:
-      metadata:
-        description: run_code_with_error
-        id: 8ibqxj_6Nx-cjTaWBG4pn
-        name: methods/run_code_with_error
-      nodes:
-        '[1-PMYzyc5P1mn1QYv79ZG]:graphOutput "Graph Output"':
-          data:
-            dataType: string
-            id: result
-          visualData: 1000/0/400/800//
-        '[KmCv5JEbaiRh4d3pczzXh]:object "Object"':
-          data:
-            jsonTemplate: |-
-              {
-                  "Content-Type":"application/json"
-              }
-          outgoingConnections:
-            - output->"HTTP CALL" w2xK5Z_FLsnTOZDEIzSOv/headers
-          visualData: 0/-200/400/800//
-        '[ix5b5JEbcB3Ycnj5Ima-z]:object "Object"':
-          data:
-            jsonTemplate: |-
-              {
-                  "code": {{ code }}
-              }
-          outgoingConnections:
-            - output->"HTTP CALL" w2xK5Z_FLsnTOZDEIzSOv/req_body
-          visualData: 0/0/400/800//
-        '[w2xK5Z_FLsnTOZDEIzSOv]:httpCall "HTTP CALL"':
-          data:
-            body: ""
-            errorOnNon200: true
-            headers: ""
-            jsonTemplate: ""
-            method: POST
-            text: ""
-            url: http://localhost:8000/methods/run_code_with_error
-            useBodyInput: true
-            useHeadersInput: true
-            useMethodInput: false
-            useUrlInput: false
-          outgoingConnections:
-            - res_body->"Graph Output" 1-PMYzyc5P1mn1QYv79ZG/value
-          visualData: 500/0/400/800//
-        '[xb8UOHBQJXHEz7oLaVmPH]:graphInput "code"':
-          data:
-            dataType: string
-            defaultValue: print('hello world')
-            editor: string
-            id: code
-            useDefaultValueInput: false
-          outgoingConnections:
-            - 'data->"Object" ix5b5JEbcB3Ycnj5Ima-z/ code '
-          visualData: -500/0/400/800//
-    FKfBEDxsK3dcCEApDArJ1:
-      metadata:
-        description: Longueur de contexte pour un llm
-        id: FKfBEDxsK3dcCEApDArJ1
-        name: presets/context_len
-      nodes:
-        '[3xMJSdbgHJflSqxFwFLCE]:destructure "Destructure"':
-          data:
-            paths:
-              - 0 64
-              - 1 128
-              - 2 256
-              - 3 512
-              - 4 1k
-              - 5 2k
-              - 6 4k
-              - 7 8k
-              - 8 16k
-              - 9 32k
-          outgoingConnections:
-            - match_0->"Graph Output" V1up_ziodHEOqT-pPgSXF/value
-            - match_1->"Graph Output" dbZiYTGt7ADKI1BgNOCp5/value
-            - match_2->"Graph Output" vcMVD1rMYbJ5RbBip9UiL/value
-            - match_3->"Graph Output" lx1pb8j-BUFkDBscD7F4J/value
-            - match_4->"Graph Output" _-CeSrUtlG595i5JQcjMr/value
-            - match_5->"Graph Output" 9esWTNGvFWwnhpEwpK9E4/value
-            - match_6->"Graph Output" KbKPArrXKcvg7mqjeFmRi/value
-            - match_7->"Graph Output" cMPQi57m2zF3aR3yTa1Ne/value
-            - match_8->"Graph Output" OjYNBVpBqEuqqmQYxYSHT/value
-            - match_9->"Graph Output" uXhzOJ_V8i85cPFzJVmDJ/value
-          visualData: 500/0/400/800//
-        '[9esWTNGvFWwnhpEwpK9E4]:graphOutput "Graph Output"':
-          data:
-            dataType: number
-            id: 5 2k
-          visualData: 1000/750/400/800//
-        '[AU93W2c-ushQXfoZZ1N1q]:object "Object"':
-          data:
-            jsonTemplate: |-
-              {
-                  "0 64":64,
-                  "1 128":128,
-                  "2 256":256,
-                  "3 512":512,
-                  "4 1k":1024,
-                  "5 2k":2048,
-                  "6 4k":4096,
-                  "7 8k":8192,
-                  "8 16k":16384,
-                  "9 32k":32768
-              }
-          outgoingConnections:
-            - output->"Destructure" 3xMJSdbgHJflSqxFwFLCE/object
-          visualData: 0/0/400/800//
-        '[KbKPArrXKcvg7mqjeFmRi]:graphOutput "Graph Output"':
-          data:
-            dataType: number
-            id: 6 4k
-          visualData: 1000/900/400/800//
-        '[OjYNBVpBqEuqqmQYxYSHT]:graphOutput "Graph Output"':
-          data:
-            dataType: number
-            id: 8 16k
-          visualData: 1000/1200/400/800//
-        '[V1up_ziodHEOqT-pPgSXF]:graphOutput "Graph Output"':
-          data:
-            dataType: number
-            id: 0 64
-          visualData: 1000/0/400/800//
-        '[_-CeSrUtlG595i5JQcjMr]:graphOutput "Graph Output"':
-          data:
-            dataType: number
-            id: 4 1k
-          visualData: 1000/600/400/800//
-        '[cMPQi57m2zF3aR3yTa1Ne]:graphOutput "Graph Output"':
-          data:
-            dataType: number
-            id: 7 8k
-          visualData: 1000/1050/400/800//
-        '[dbZiYTGt7ADKI1BgNOCp5]:graphOutput "Graph Output"':
-          data:
-            dataType: number
-            id: 1 128
-          visualData: 1000/150/400/800//
-        '[lx1pb8j-BUFkDBscD7F4J]:graphOutput "Graph Output"':
-          data:
-            dataType: number
-            id: 3 512
-          visualData: 1000/450/400/800//
-        '[uXhzOJ_V8i85cPFzJVmDJ]:graphOutput "Graph Output"':
-          data:
-            dataType: number
-            id: 9 32k
-          visualData: 1000/1350/400/800//
-        '[vcMVD1rMYbJ5RbBip9UiL]:graphOutput "Graph Output"':
-          data:
-            dataType: number
-            id: 2 256
-          visualData: 1000/300/400/800//
-    MOvp6qzdmrsJX__FyxlYA:
-      metadata:
-        description: Playground
-        id: MOvp6qzdmrsJX__FyxlYA
-        name: Hello World
-      nodes:
-        '[01nOv6aTQ1tv9z4yPuwb3]:subGraph "transcribe"':
-          data:
-            graphId: ssYnXODjAmiEvKK2Z-ILu
-            height: 400
-            useAsGraphPartialOutput: false
-            useErrorOutput: false
-          visualData: 2650/400/500/400//
-        '[16ZLuaV5i54WVSSglA484]:array "Array"':
-          data:
-            flatten: true
-            flattenDeep: false
-          visualData: 2371.316734834507/1114.7857145928213/230/2325//
-        '[40aoLLTdXhydIybWf0xdm]:text "Text"':
-          data:
-            text: "<|im_start|>system\r
-
-              You are a helpful assistant<|im_end|>\r
-
-              <|im_start|>user\r
-
-              Give me a warm greeting<|im_end|>\r
-
-              <|im_start|>assistant\r\n"
-          outgoingConnections:
-            - output->"run_prompt" OnmpzU7vetWAd-bxJ26u2/prompt
-          visualData: 1624.7908827296044/1823.8333411348904/330/2334//
-        '[43b3ghNtslsY3kVhnZO4C]:subGraph "stop_sequences_presets"':
-          data:
-            graphId: 5DnEtyedoghg1QyfYSjRx
-            height: 400
-            useAsGraphPartialOutput: false
-            useErrorOutput: false
-          outgoingConnections:
-            - 0 </s>->"load_ollama_model" B2YgWPpDVDJz4AaP3MRzP/stop_sequences
-            - 0 </s>->"load_ollama_model" __VZkChhPgci03Xiq4FBn/stop_sequences
-          visualData: 250/1500/500/400//
-        '[49gpjA-k02BSSf1shjSni]:comment "Playground"':
-          data:
-            backgroundColor: rgba(62,52,255,0.3)
-            color: rgba(255,255,255,1)
-            height: 2300
-            text: "## Flows"
-          visualData: 850/850/14950/2300//
-        '[7wBKAttvrjHVIMZXuQ4zy]:comment "Playground"':
-          data:
-            backgroundColor: rgba(254,152,154,0.3)
-            color: rgba(255,255,255,1)
-            height: 600
-            text: "## Methods"
-          visualData: 200/200/15600/600//
-        '[B2YgWPpDVDJz4AaP3MRzP]:subGraph "load_ollama_model"':
-          data:
-            graphId: TtkuL2zft19_cH_F3_Ufj4
-            height: 400
-            useAsGraphPartialOutput: false
-            useErrorOutput: false
-          outgoingConnections:
-            - identifier->"Array" 16ZLuaV5i54WVSSglA484/input1
-          visualData: 1722.295851959109/916.4115352218134/500/2346//
-        '[ClPTPYstGeetIgn4UtJDI]:subGraph "run_code_with_error"':
-          data:
-            graphId: 8ibqxj_6Nx-cjTaWBG4pn
-            height: 400
-            useAsGraphPartialOutput: false
-            useErrorOutput: false
-          visualData: 3250/400/500/400//
-        '[FvEDXJsVYDh9sS2cuU_s5]:subGraph "load_ollama_model"':
-          data:
-            graphId: TtkuL2zft19_cH_F3_Ufj4
-            height: 400
-            useAsGraphPartialOutput: false
-            useErrorOutput: false
-          visualData: 850/401.2996746017368/500/2301//
-        '[Ie-7AniD1N_knuqNJ7MTj]:subGraph "temperature_presets"':
-          data:
-            graphId: Zwrmg-p5r5TrkZkbntZuO
-            height: 400
-            useAsGraphPartialOutput: false
-            useErrorOutput: false
-          outgoingConnections:
-            - 0 Formal->"load_ollama_model" B2YgWPpDVDJz4AaP3MRzP/temperature
-            - 0 Formal->"load_ollama_model" __VZkChhPgci03Xiq4FBn/temperature
-          visualData: 250/1750/500/400//
-        '[JJTzPkL2BK6OtV50C8pXr]:subGraph "hf_open_llm_presets"':
-          data:
-            graphId: W5FJJpKxAOSVtyvtx1BQj
-            height: 400
-            useAsGraphPartialOutput: false
-            useErrorOutput: false
-          visualData: 250/1250/500/400//
-        '[KeNRRtEJjfUtEvogVHfVX]:number "Number"':
-          data:
-            round: false
-            roundTo: 0
-            value: -1
-          outgoingConnections:
-            - value->"load_ollama_model" B2YgWPpDVDJz4AaP3MRzP/num_gpu
-            - value->"load_ollama_model" __VZkChhPgci03Xiq4FBn/num_gpu
-          visualData: 1261.4513458508611/960.4272685134687/230/2353//
-        '[KfrDGVqrfkQuHvnhMeboB]:subGraph "context_len_presets"':
-          data:
-            graphId: FKfBEDxsK3dcCEApDArJ1
-            height: 400
-            useAsGraphPartialOutput: false
-            useErrorOutput: false
-          outgoingConnections:
-            - 3 512->"load_ollama_model" B2YgWPpDVDJz4AaP3MRzP/max_new_tokens
-            - 3 512->"load_ollama_model" __VZkChhPgci03Xiq4FBn/max_new_tokens
-          visualData: 250/2250/500/400//
-        '[NocT0mvhQqWJ234TWGn9O]:subGraph "ollama_llm_presets"':
-          data:
-            graphId: W5FJPpKQAOaVtyvtx1BQj
-            height: 400
-            useAsGraphPartialOutput: false
-            useErrorOutput: false
-          outgoingConnections:
-            - dolphin-26-phi->"load_ollama_model" __VZkChhPgci03Xiq4FBn/model
-            - tinyllama-1b->"load_ollama_model" B2YgWPpDVDJz4AaP3MRzP/model
-          visualData: 250/2000/500/400//
-        '[OnmpzU7vetWAd-bxJ26u2]:subGraph "run_prompt"':
-          data:
-            graphId: ssYnXDDG8hiEvKK2Z-ILu
-            height: 400
-            useAsGraphPartialOutput: false
-            useErrorOutput: false
-          outgoingConnections:
-            - identifier->"Array" w01nMdnweQxPkqSgo5yyp/input2
-          visualData: 2080.313090647903/1875.4471056325688/500/2326//
-        '[QluWIQ0rd4ryej4CLeFin]:text "Text"':
-          data:
-            text: dolphinphi
-          outgoingConnections:
-            - output->"load_ollama_model" __VZkChhPgci03Xiq4FBn/identifier
-            - output->"run_prompt" OnmpzU7vetWAd-bxJ26u2/identifier
-          visualData: 1172.492393272737/1859.2000082474424/330/2338//
-        '[U0y_kbr_Gz_zho_b9Saq7]:subGraph "load_hf_hosted_model"':
-          data:
-            graphId: TtkuL2gcFK_cH_F3_Ufj4
-            height: 400
-            useAsGraphPartialOutput: false
-            useErrorOutput: false
-          visualData: 250/400/500/400//
-        '[W3fs9uUs453gMOBurDLLa]:subGraph "auth_presets"':
-          data:
-            graphId: 7NcPhV8OHI8jI3uzYn4fK
-            height: 400
-            useAsGraphPartialOutput: false
-            useErrorOutput: false
-          visualData: 250/1000/500/400//
-        '[__VZkChhPgci03Xiq4FBn]:subGraph "load_ollama_model"':
-          data:
-            graphId: TtkuL2zft19_cH_F3_Ufj4
-            height: 400
-            useAsGraphPartialOutput: false
-            useErrorOutput: false
-          outgoingConnections:
-            - identifier->"Array" 16ZLuaV5i54WVSSglA484/input2
-          visualData: 1721.207135828358/1226.1643436820123/500/2324//
-        '[bmREVjbjflntdoHuFvVci]:comment "Playground"':
-          data:
-            backgroundColor: rgba(120,245,206,0.3)
-            color: rgba(255,255,255,1)
-            height: 2300
-            text: "## Presets"
-          visualData: 200/850/600/2300//
-        '[cCzRIwlXQhQKNEfEtIk76]:text "Text"':
-          data:
-            text: tinyllama
-          outgoingConnections:
-            - output->"load_ollama_model" B2YgWPpDVDJz4AaP3MRzP/identifier
-            - output->"run_prompt" pQMImvpbVbEbGzy9B35RL/identifier
-          visualData: 1181.7180531221752/1642.0666184088564/330/2337//
-        '[dWuCztCfSVzcSC1f-XjZS]:subGraph "run_prompt"':
-          data:
-            graphId: ssYnXDDG8hiEvKK2Z-ILu
-            height: 400
-            useAsGraphPartialOutput: false
-            useErrorOutput: false
-          visualData: 2050/400/500/2313//
-        '[j9NkAueS0V2HBKbB8jDrj]:subGraph "load_whisper"':
-          data:
-            graphId: ssYNXMPG88iEvKK2Z-Ihu
-            height: 400
-            useAsGraphPartialOutput: false
-            useErrorOutput: false
-          visualData: 1450/400/500/400//
-        '[khykmy93ZrwjY8DVEj8s-]:comment "Playground"':
-          data:
-            backgroundColor: rgba(230,254,115,0.3)
-            color: rgba(255,255,255,1)
-            height: 600
-            text: "## Prompts"
-          visualData: 200/3200/15600/600//
-        '[n2cm0UkFUIGYAjlf7xY6K]:text "Text"':
-          data:
-            text: "<|system|>\r
-
-              You are a helpful assistant</s>\r
-
-              <|user|>\r
-
-              Give me a warm greeting</s>\r
-
-              <|assistant|>\r\n"
-          outgoingConnections:
-            - output->"run_prompt" pQMImvpbVbEbGzy9B35RL/prompt
-          visualData: 1630.0626021707665/1561.889732736808/330/2332//
-        '[pQMImvpbVbEbGzy9B35RL]:subGraph "run_prompt"':
-          data:
-            graphId: ssYnXDDG8hiEvKK2Z-ILu
-            height: 400
-            useAsGraphPartialOutput: false
-            useErrorOutput: false
-          outgoingConnections:
-            - identifier->"Array" w01nMdnweQxPkqSgo5yyp/input1
-          visualData: 2080.313090647903/1675.4471056325688/500/2326//
-        '[v-kRYv2pBzxk4leT3x3tm]:comment "Comment"':
-          data:
-            backgroundColor: rgba(0,0,0,0.05)
-            color: rgba(255,255,255,1)
-            height: 646.1122980387979
-            text: "#### Model Loading"
-          visualData: 1239.52862710534/852.0090232680727/1509.4715522257334/2344//
-        '[w01nMdnweQxPkqSgo5yyp]:array "Array"':
-          data:
-            flatten: true
-            flattenDeep: false
-          visualData: 2720.903085201036/1695.6720736432392/230/2336//
-    TtkuL2gcFK_cH_F3_Ufj4:
-      metadata:
-        description: load_hf_hosted_model
-        id: TtkuL2gcFK_cH_F3_Ufj4
-        name: methods/load_hf_hosted_model
-      nodes:
-        '[2X8rEaRZ645l1MRtScmdv]:graphInput "max_new_tokens"':
-          data:
-            dataType: number
-            defaultValue: 256
-            editor: number
-            id: max_new_tokens
-            useDefaultValueInput: false
-          outgoingConnections:
-            - 'data->"Object" w8ZsCVrxbUBTLlgCeOrLs/ max_new_tokens '
-          visualData: -500/450/400/800//
-        '[Asafe5RSbHKBVxOtMHctt]:graphInput "temperature"':
-          data:
-            dataType: number
-            defaultValue: 0.01
-            editor: number
-            id: temperature
-            useDefaultValueInput: false
-          outgoingConnections:
-            - 'data->"Object" w8ZsCVrxbUBTLlgCeOrLs/ temperature '
-          visualData: -500/750/400/800//
-        '[CBCN2IPizTb_pbi-qe7CP]:graphInput "identifier"':
-          data:
-            dataType: string
-            defaultValue: zephyr
-            editor: string
-            id: identifier
-            useDefaultValueInput: false
-          outgoingConnections:
-            - 'data->"Object" w8ZsCVrxbUBTLlgCeOrLs/ identifier '
-          visualData: -500/0/400/800//
-        '[DMxSXvexChkpO2SOyGPeu]:graphInput "hf_name"':
-          data:
-            dataType: string
-            defaultValue: HuggingFaceH4/zephyr-7b-beta
-            editor: string
-            id: hf_name
-            useDefaultValueInput: false
-          outgoingConnections:
-            - 'data->"Object" w8ZsCVrxbUBTLlgCeOrLs/ hf_name '
-          visualData: -500/150/400/800//
-        '[Pvbuo9NgDacZTwyXatSbX]:graphOutput "Graph Output"':
-          data:
-            dataType: string
-            id: identifier
-          visualData: 1000/0/400/800//
-        '[RlFhCsPO7PfRKnr2GaQtD]:object "Object"':
-          data:
-            jsonTemplate: |-
-              {
-                  "Content-Type":"application/json"
-              }
-          outgoingConnections:
-            - output->"HTTP CALL" oxZFB5GfIchXsYerh9ggG/headers
-          visualData: 0/-200/400/800//
-        '[oxZFB5GfIchXsYerh9ggG]:httpCall "HTTP CALL"':
-          data:
-            body: ""
-            errorOnNon200: true
-            headers: ""
-            jsonTemplate: ""
-            method: POST
-            text: ""
-            url: http://localhost:8000/methods/load_hf_hosted_model
-            useBodyInput: true
-            useHeadersInput: true
-            useMethodInput: false
-            useUrlInput: false
-          outgoingConnections:
-            - res_body->"Graph Output" Pvbuo9NgDacZTwyXatSbX/value
-          visualData: 500/0/400/800//
-        '[w8ZsCVrxbUBTLlgCeOrLs]:object "Object"':
-          data:
-            jsonTemplate: |-
-              {
-                  "identifier": {{ identifier }},
-                  "hf_name": {{ hf_name }},
-                  "auth_token": {{ auth_token }},
-                  "max_new_tokens": {{ max_new_tokens }},
-                  "stop_sequences": {{ stop_sequences }},
-                  "temperature": {{ temperature }}
-              }
-          outgoingConnections:
-            - output->"HTTP CALL" oxZFB5GfIchXsYerh9ggG/req_body
-          visualData: 0/0/400/800//
-        '[x5MedfIq2ibCyg-ecMo5g]:graphInput "auth_token"':
-          data:
-            dataType: string
-            defaultValue: null
-            editor: string
-            id: auth_token
-            useDefaultValueInput: false
-          outgoingConnections:
-            - 'data->"Object" w8ZsCVrxbUBTLlgCeOrLs/ auth_token '
-          visualData: -500/300/400/800//
-        '[xXncIGeWlkQZRxmN-cqGG]:graphInput "stop_sequences"':
-          data:
-            dataType: string
-            defaultValue: </s>
-            editor: string
-            id: stop_sequences
-            useDefaultValueInput: false
-          outgoingConnections:
-            - 'data->"Object" w8ZsCVrxbUBTLlgCeOrLs/ stop_sequences '
-          visualData: -500/600/400/800//
-    TtkuL2zft19_cH_F3_Ufj4:
-      metadata:
-        description: load_ollama_model
-        id: TtkuL2zft19_cH_F3_Ufj4
-        name: methods/load_ollama_model
-      nodes:
-        '[1rXU8LOBulyBFe3us-qNg]:httpCall "HTTP CALL"':
-          data:
-            body: ""
-            errorOnNon200: true
-            headers: ""
-            jsonTemplate: ""
-            method: POST
-            text: ""
-            url: http://localhost:8000/methods/load_ollama_model
-            useBodyInput: true
-            useHeadersInput: true
-            useMethodInput: false
-            useUrlInput: false
-          outgoingConnections:
-            - res_body->"Graph Output" By-F3jMgDiGuLD51BeQPU/value
-          visualData: 500/0/400/800//
-        '[3731lMsTyG3IP1QHjoabb]:graphInput "model"':
-          data:
-            dataType: string
-            defaultValue: dolphin-phi
-            editor: string
-            id: model
-            useDefaultValueInput: false
-          outgoingConnections:
-            - 'data->"Object" RZV9vYoFCmSFkqquKr7AD/ model '
-          visualData: -500/150/400/800//
-        '[71cVL1a5JDfU158yiUVbC]:object "Object"':
-          data:
-            jsonTemplate: |-
-              {
-                  "Content-Type":"application/json"
-              }
-          outgoingConnections:
-            - output->"HTTP CALL" 1rXU8LOBulyBFe3us-qNg/headers
-          visualData: 0/-200/400/800//
-        '[A4vDRDdDutlc2RWPc-br3]:graphInput "identifier"':
-          data:
-            dataType: string
-            defaultValue: dolphin-phi
-            editor: string
-            id: identifier
-            useDefaultValueInput: false
-          outgoingConnections:
-            - 'data->"Object" RZV9vYoFCmSFkqquKr7AD/ identifier '
-          visualData: -500/0/400/800//
-        '[By-F3jMgDiGuLD51BeQPU]:graphOutput "Graph Output"':
-          data:
-            dataType: string
-            id: identifier
-          visualData: 1000/0/400/800//
-        '[I6W1_x5A4UjQN3nPfckDE]:graphInput "max_new_tokens"':
-          data:
-            dataType: number
-            defaultValue: 256
-            editor: number
-            id: max_new_tokens
-            useDefaultValueInput: false
-          outgoingConnections:
-            - 'data->"Object" RZV9vYoFCmSFkqquKr7AD/ max_new_tokens '
-          visualData: -500/450/400/800//
-        '[JmZIBuslUpZQJ_TFMC45B]:graphInput "num_gpu"':
-          data:
-            dataType: number
-            defaultValue: -1
-            editor: number
-            id: num_gpu
-            useDefaultValueInput: false
-          outgoingConnections:
-            - 'data->"Object" RZV9vYoFCmSFkqquKr7AD/ num_gpu '
-          visualData: -500/300/400/800//
-        '[RZV9vYoFCmSFkqquKr7AD]:object "Object"':
-          data:
-            jsonTemplate: |-
-              {
-                  "identifier": {{ identifier }},
-                  "model": {{ model }},
-                  "num_gpu": {{ num_gpu }},
-                  "max_new_tokens": {{ max_new_tokens }},
-                  "stop_sequences": {{ stop_sequences }},
-                  "temperature": {{ temperature }}
-              }
-          outgoingConnections:
-            - output->"HTTP CALL" 1rXU8LOBulyBFe3us-qNg/req_body
-          visualData: 0/0/400/800//
-        '[XB93R9x3h61QybgZeg-Sc]:graphInput "stop_sequences"':
-          data:
-            dataType: string
-            defaultValue: </s>
-            editor: string
-            id: stop_sequences
-            useDefaultValueInput: false
-          outgoingConnections:
-            - 'data->"Object" RZV9vYoFCmSFkqquKr7AD/ stop_sequences '
-          visualData: -500/600/400/800//
-        '[cT7IGZm76Lq6zc4EVBWb-]:graphInput "temperature"':
-          data:
-            dataType: number
-            defaultValue: 0.01
-            editor: number
-            id: temperature
-            useDefaultValueInput: false
-          outgoingConnections:
-            - 'data->"Object" RZV9vYoFCmSFkqquKr7AD/ temperature '
-          visualData: -500/750/400/800//
-    W5FJJpKxAOSVtyvtx1BQj:
-      metadata:
-        description: HF Open LLM
-        id: W5FJJpKxAOSVtyvtx1BQj
-        name: presets/hf_hosted_text_gen
-      nodes:
-        '[-jWQWanU3J2BjXyLHFFIM]:object "Object"':
-          data:
-            jsonTemplate: >-
-              {
-                  "mixtral_8x7b_instruct_01":"mistralai/Mixtral-8x7B-Instruct-v0.1",
-                  "zephyr_beta":"HuggingFaceH4/zephyr-7b-beta",
-                  "star_chat_beta":"HuggingFaceH4/starchat-beta"
-              }
-          outgoingConnections:
-            - output->"Destructure" zchwpHNyn6ocAcxbldC7S/object
-          visualData: 0/0/400/800//
-        '[k_syPibEWpZ1QCt1eAEDi]:graphOutput "Graph Output"':
-          data:
-            dataType: string
-            id: star_chat_beta
-          visualData: 1000/300/400/800//
-        '[rXmOUXkkd5Y7MNVoNqbO5]:graphOutput "Graph Output"':
-          data:
-            dataType: string
-            id: mixtral_8x7b_instruct_01
-          visualData: 1000/0/400/800//
-        '[zIAhB28fEiBXic3tABokF]:graphOutput "Graph Output"':
-          data:
-            dataType: string
-            id: zephyr_beta
-          visualData: 1000/150/400/800//
-        '[zchwpHNyn6ocAcxbldC7S]:destructure "Destructure"':
-          data:
-            paths:
-              - mixtral_8x7b_instruct_01
-              - zephyr_beta
-              - star_chat_beta
-          outgoingConnections:
-            - match_0->"Graph Output" rXmOUXkkd5Y7MNVoNqbO5/value
-            - match_1->"Graph Output" zIAhB28fEiBXic3tABokF/value
-            - match_2->"Graph Output" k_syPibEWpZ1QCt1eAEDi/value
-          visualData: 500/0/400/800//
-    W5FJPpKQAOaVtyvtx1BQj:
-      metadata:
-        description: Ollama presets
-        id: W5FJPpKQAOaVtyvtx1BQj
-        name: presets/ollama_llm_presets
-      nodes:
-        '[4Ibc2MGNbEVda3KSXDNPx]:graphOutput "Graph Output"':
-          data:
-            dataType: string
-            id: openchat-35-1210
-          visualData: 1000/300/400/800//
-        '[9aWypURS5hIRPPWpKE4Ui]:graphOutput "Graph Output"':
-          data:
-            dataType: string
-            id: prometheus-7b-v1
-          visualData: 1000/450/400/800//
-        '[G8_PZ4UEkZGM8tG9tTvaB]:graphOutput "Graph Output"':
-          data:
-            dataType: string
-            id: magicoder-ds-7b
-          visualData: 1000/150/400/800//
-        '[Hz2g7OSSIZN1cD9EkA6PS]:destructure "Destructure"':
-          data:
-            paths:
-              - tinyllama-1b
-              - magicoder-ds-7b
-              - openchat-35-1210
-              - prometheus-7b-v1
-              - dolphin-26-mistral
-              - dolphin-26-phi
-              - gorilla-function
-          outgoingConnections:
-            - match_0->"Graph Output" j3yytx6pfJYYmFQ62VcxW/value
-            - match_1->"Graph Output" G8_PZ4UEkZGM8tG9tTvaB/value
-            - match_2->"Graph Output" 4Ibc2MGNbEVda3KSXDNPx/value
-            - match_3->"Graph Output" 9aWypURS5hIRPPWpKE4Ui/value
-            - match_4->"Graph Output" vYf83l18D-F4ffNESH8cc/value
-            - match_5->"Graph Output" ZXvYplyJlYhnddN1b6pje/value
-            - match_6->"Graph Output" bzZZ8Iqgz5JMIbsD8IrQ2/value
-          visualData: 500/0/400/800//
-        '[RF_paptUFIUyi6quER9AU]:object "Object"':
-          data:
-            jsonTemplate: |-
-              {
-                  "tinyllama-1b":"tinyllama-1b",
-                  "magicoder-ds-7b":"magicoder-ds-7b",
-                  "openchat-35-1210":"openchat-35-1210",
-                  "prometheus-7b-v1":"prometheus-7b-v1",
-                  "dolphin-26-mistral":"dolphin-26-mistral",
-                  "dolphin-26-phi":"dolphin-26-phi",
-                  "gorilla-function":"gorilla-function"
-              }
-          outgoingConnections:
-            - output->"Destructure" Hz2g7OSSIZN1cD9EkA6PS/object
-          visualData: 0/0/400/800//
-        '[ZXvYplyJlYhnddN1b6pje]:graphOutput "Graph Output"':
-          data:
-            dataType: string
-            id: dolphin-26-phi
-          visualData: 1000/750/400/800//
-        '[bzZZ8Iqgz5JMIbsD8IrQ2]:graphOutput "Graph Output"':
-          data:
-            dataType: string
-            id: gorilla-function
-          visualData: 1000/900/400/800//
-        '[j3yytx6pfJYYmFQ62VcxW]:graphOutput "Graph Output"':
-          data:
-            dataType: string
-            id: tinyllama-1b
-          visualData: 1000/0/400/800//
-        '[vYf83l18D-F4ffNESH8cc]:graphOutput "Graph Output"':
-          data:
-            dataType: string
-            id: dolphin-26-mistral
-          visualData: 1000/600/400/800//
-    Zwrmg-p5r5TrkZkbntZuO:
-      metadata:
-        description: Creativité du llm
-        id: Zwrmg-p5r5TrkZkbntZuO
-        name: presets/temperature
-      nodes:
-        '[AnTOn6AJEiMG-V2rwrqoH]:graphOutput "Graph Output"':
-          data:
-            dataType: number
-            id: 2 Creative
-          visualData: 1000/300/400/800//
-        '[FD8Es1tRGdHQMBmFRrEiG]:object "Object"':
-          data:
-            jsonTemplate: |-
-              {
-                  "0 Formal":0.0,
-                  "1 Balanced":0.3,
-                  "2 Creative":0.7,
-                  "3 Drunk":0.99,
-                  "4 Crazy":1.3
-              }
-          outgoingConnections:
-            - output->"Destructure" yOhUOuZFRZQrcN_nYXsT5/object
-          visualData: 0/0/400/800//
-        '[Qe2rFJyRkaegRylebQRkd]:graphOutput "Graph Output"':
-          data:
-            dataType: number
-            id: 1 Balanced
-          visualData: 1000/150/400/800//
-        '[_NA__xZ4GT2LZpe9XhEwU]:graphOutput "Graph Output"':
-          data:
-            dataType: number
-            id: 3 Drunk
-          visualData: 1000/450/400/800//
-        '[hkEdcZ_uDRzomrdK9c9Wz]:graphOutput "Graph Output"':
-          data:
-            dataType: number
-            id: 0 Formal
-          visualData: 1000/0/400/800//
-        '[t16-MM3mRoNZdHNJK1p9Q]:graphOutput "Graph Output"':
-          data:
-            dataType: number
-            id: 4 Crazy
-          visualData: 1000/600/400/800//
-        '[yOhUOuZFRZQrcN_nYXsT5]:destructure "Destructure"':
-          data:
-            paths:
-              - 0 Formal
-              - 1 Balanced
-              - 2 Creative
-              - 3 Drunk
-              - 4 Crazy
-          outgoingConnections:
-            - match_0->"Graph Output" hkEdcZ_uDRzomrdK9c9Wz/value
-            - match_1->"Graph Output" Qe2rFJyRkaegRylebQRkd/value
-            - match_2->"Graph Output" AnTOn6AJEiMG-V2rwrqoH/value
-            - match_3->"Graph Output" _NA__xZ4GT2LZpe9XhEwU/value
-            - match_4->"Graph Output" t16-MM3mRoNZdHNJK1p9Q/value
-          visualData: 500/0/400/800//
-    fkNyEWMNcqvtno3aLQONC:
-      metadata:
-        description: Playground
-        id: fkNyEWMNcqvtno3aLQONC
-        name: Playground
-      nodes:
-        '[1kQJi7smlYWh644NNaq_f]:subGraph "temperature_presets"':
-          data:
-            graphId: Zwrmg-p5r5TrkZkbntZuO
-            height: 400
-            useAsGraphPartialOutput: false
-            useErrorOutput: false
-          visualData: 250/1750/500/400//
-        '[2yiR8ugGEBxFcW9GxswSG]:subGraph "hf_open_llm_presets"':
-          data:
-            graphId: W5FJJpKxAOSVtyvtx1BQj
-            height: 400
-            useAsGraphPartialOutput: false
-            useErrorOutput: false
-          visualData: 250/1250/500/400//
-        '[5k3l5-N5dfgSbojo-g_3t]:subGraph "run_code_with_error"':
-          data:
-            graphId: 8ibqxj_6Nx-cjTaWBG4pn
-            height: 400
-            useAsGraphPartialOutput: false
-            useErrorOutput: false
-          visualData: 3250/400/500/400//
-        '[8hezclQ89pYYXaXZxOqhz]:subGraph "load_hf_hosted_model"':
-          data:
-            graphId: TtkuL2gcFK_cH_F3_Ufj4
-            height: 400
-            useAsGraphPartialOutput: false
-            useErrorOutput: false
-          visualData: 250/400/500/400//
-        '[B1u4ai6pc5dBrVt2c-75B]:subGraph "load_ollama_model"':
-          data:
-            graphId: TtkuL2zft19_cH_F3_Ufj4
-            height: 400
-            useAsGraphPartialOutput: false
-            useErrorOutput: false
-          visualData: 850/400/500/400//
-        '[IZrA1Aajevjm8I-yZ3_Gl]:subGraph "auth_presets"':
-          data:
-            graphId: 7NcPhV8OHI8jI3uzYn4fK
-            height: 400
-            useAsGraphPartialOutput: false
-            useErrorOutput: false
-          visualData: 250/1000/500/400//
-        '[Qy6taMggvwpKLbUa4XLqt]:subGraph "run_prompt"':
-          data:
-            graphId: ssYnXDDG8hiEvKK2Z-ILu
-            height: 400
-            useAsGraphPartialOutput: false
-            useErrorOutput: false
-          visualData: 2050/400/500/400//
-        '[SfcauPNqfdRqHJGTIyRAM]:subGraph "stop_sequences_presets"':
-          data:
-            graphId: 5DnEtyedoghg1QyfYSjRx
-            height: 400
-            useAsGraphPartialOutput: false
-            useErrorOutput: false
-          visualData: 250/1500/500/400//
-        '[VmnB5Y3sxfFJtRboekCYg]:subGraph "transcribe"':
-          data:
-            graphId: ssYnXODjAmiEvKK2Z-ILu
-            height: 400
-            useAsGraphPartialOutput: false
-            useErrorOutput: false
-          visualData: 2650/400/500/400//
-        '[Z45I_wb2nh4JEmqvEtQwS]:comment "Playground"':
-          data:
-            backgroundColor: rgba(120,245,206,0.3)
-            color: rgba(255,255,255,1)
-            height: 2300
-            text: "## Presets"
-          visualData: 200/850/600/2300//
-        '[cOO4QRFhL7mP9XUePraXI]:comment "Playground"':
-          data:
-            backgroundColor: rgba(254,152,154,0.3)
-            color: rgba(255,255,255,1)
-            height: 600
-            text: "## Methods"
-          visualData: 200/200/15600/600//
-        '[hH85gUgmZomHwqdR3e4PQ]:subGraph "load_whisper"':
-          data:
-            graphId: ssYNXMPG88iEvKK2Z-Ihu
-            height: 400
-            useAsGraphPartialOutput: false
-            useErrorOutput: false
-          visualData: 1450/400/500/400//
-        '[kecj1K-D56cMGHBVtw1NW]:comment "Playground"':
-          data:
-            backgroundColor: rgba(62,52,255,0.3)
-            color: rgba(255,255,255,1)
-            height: 2300
-            text: "## Flows"
-          visualData: 850/850/14950/2300//
-        '[l3wUqrK1b6jOjRJoePB58]:subGraph "ollama_llm_presets"':
-          data:
-            graphId: W5FJPpKQAOaVtyvtx1BQj
-            height: 400
-            useAsGraphPartialOutput: false
-            useErrorOutput: false
-          visualData: 250/2000/500/400//
-        '[qPsOD_ANiK-QiomYjlqIG]:subGraph "context_len_presets"':
-          data:
-            graphId: FKfBEDxsK3dcCEApDArJ1
-            height: 400
-            useAsGraphPartialOutput: false
-            useErrorOutput: false
-          visualData: 250/2250/500/400//
-        '[sPDIQXpG1smPze_Eq52fg]:comment "Playground"':
-          data:
-            backgroundColor: rgba(230,254,115,0.3)
-            color: rgba(255,255,255,1)
-            height: 600
-            text: "## Prompts"
-          visualData: 200/3200/15600/600//
-    ssYNXMPG88iEvKK2Z-Ihu:
-      metadata:
-        description: load_whisper
-        id: ssYNXMPG88iEvKK2Z-Ihu
-        name: methods/load_whisper
-      nodes:
-        '[Av7zX9tLJsSUVtfUfJz52]:graphInput "identifier"':
-          data:
-            dataType: string
-            defaultValue: whisper
-            editor: string
-            id: identifier
-            useDefaultValueInput: false
-          outgoingConnections:
-            - 'data->"Object" d6h67HbrUxjYiUfRoOs5k/ identifier '
-          visualData: -500/0/400/800//
-        '[Frczlq_ym6qLV9UEDRKu9]:object "Object"':
-          data:
-            jsonTemplate: |-
-              {
-                  "Content-Type":"application/json"
-              }
-          outgoingConnections:
-            - output->"HTTP CALL" aRG5fN6f7w3-oGNgTtBXd/headers
-          visualData: 0/-200/400/800//
-        '[XYkX27ZTiLO7yAQGWXdmo]:graphOutput "Graph Output"':
-          data:
-            dataType: string
-            id: identifier
-          visualData: 1000/0/400/800//
-        '[aRG5fN6f7w3-oGNgTtBXd]:httpCall "HTTP CALL"':
-          data:
-            body: ""
-            errorOnNon200: true
-            headers: ""
-            jsonTemplate: ""
-            method: POST
-            text: ""
-            url: http://localhost:8000/methods/load_whisper
-            useBodyInput: true
-            useHeadersInput: true
-            useMethodInput: false
-            useUrlInput: false
-          outgoingConnections:
-            - res_body->"Graph Output" XYkX27ZTiLO7yAQGWXdmo/value
-          visualData: 500/0/400/800//
-        '[d6h67HbrUxjYiUfRoOs5k]:object "Object"':
-          data:
-            jsonTemplate: |-
-              {
-                  "identifier": {{ identifier }},
-                  "model_version": {{ model_version }},
-                  "device": {{ device }},
-                  "precision": {{ precision }}
-              }
-          outgoingConnections:
-            - output->"HTTP CALL" aRG5fN6f7w3-oGNgTtBXd/req_body
-          visualData: 0/0/400/800//
-        '[dKXa__F3DO4ZIPJpTBpmv]:graphInput "model_version"':
-          data:
-            dataType: string
-            defaultValue: base
-            editor: string
-            id: model_version
-            useDefaultValueInput: false
-          outgoingConnections:
-            - 'data->"Object" d6h67HbrUxjYiUfRoOs5k/ model_version '
-          visualData: -500/150/400/800//
-        '[lei5JPUBDd9Zj1xdoC-Yn]:graphInput "precision"':
-          data:
-            dataType: string
-            defaultValue: int8
-            editor: string
-            id: precision
-            useDefaultValueInput: false
-          outgoingConnections:
-            - 'data->"Object" d6h67HbrUxjYiUfRoOs5k/ precision '
-          visualData: -500/450/400/800//
-        '[zEhwGGnTkFJe8LzFFagv1]:graphInput "device"':
-          data:
-            dataType: string
-            defaultValue: cpu
-            editor: string
-            id: device
-            useDefaultValueInput: false
-          outgoingConnections:
-            - 'data->"Object" d6h67HbrUxjYiUfRoOs5k/ device '
-          visualData: -500/300/400/800//
-    ssYnXDDG8hiEvKK2Z-ILu:
-      metadata:
-        description: run_prompt
-        id: ssYnXDDG8hiEvKK2Z-ILu
-        name: methods/run_prompt
-      nodes:
-        '[HlG-zc33sWQEWMVRXtBVP]:graphOutput "Graph Output"':
-          data:
-            dataType: string
-            id: identifier
-          visualData: 1000/0/400/800//
-        '[VJFP47kDaDWRa3NXwQaMv]:graphInput "identifier"':
-          data:
-            dataType: string
-            defaultValue: zephyr
-            editor: string
-            id: identifier
-            useDefaultValueInput: false
-          outgoingConnections:
-            - 'data->"Object" sJRzO-voz2XWsnd9eSwud/ identifier '
-          visualData: -500/0/400/800//
-        '[csibwSpNsQJ6l6UPZtAbg]:httpCall "HTTP CALL"':
-          data:
-            body: ""
-            errorOnNon200: true
-            headers: ""
-            jsonTemplate: ""
-            method: POST
-            text: ""
-            url: http://localhost:8000/methods/run_prompt
-            useBodyInput: true
-            useHeadersInput: true
-            useMethodInput: false
-            useUrlInput: false
-          outgoingConnections:
-            - res_body->"Graph Output" HlG-zc33sWQEWMVRXtBVP/value
-          visualData: 500/0/400/800//
-        '[sJRzO-voz2XWsnd9eSwud]:object "Object"':
-          data:
-            jsonTemplate: |-
-              {
-                  "identifier": {{ identifier }},
-                  "prompt": {{ prompt }}
-              }
-          outgoingConnections:
-            - output->"HTTP CALL" csibwSpNsQJ6l6UPZtAbg/req_body
-          visualData: 0/0/400/800//
-        '[xQSfBjnSB9LKySdAptA_5]:graphInput "prompt"':
-          data:
-            dataType: string
-            defaultValue: Hello World
-            editor: string
-            id: prompt
-            useDefaultValueInput: false
-          outgoingConnections:
-            - 'data->"Object" sJRzO-voz2XWsnd9eSwud/ prompt '
-          visualData: -500/150/400/800//
-        '[yVtfHZgHCt-rGFMEVXu79]:object "Object"':
-          data:
-            jsonTemplate: |-
-              {
-                  "Content-Type":"application/json"
-              }
-          outgoingConnections:
-            - output->"HTTP CALL" csibwSpNsQJ6l6UPZtAbg/headers
-          visualData: 0/-200/400/800//
-    ssYnXODjAmiEvKK2Z-ILu:
-      metadata:
-        description: transcribe
-        id: ssYnXODjAmiEvKK2Z-ILu
-        name: methods/transcribe
-      nodes:
-        '[1ENLUONvTiz3z7uKzMMcV]:graphInput "path_to_audio"':
-          data:
-            dataType: string
-            defaultValue: Hello World
-            editor: string
-            id: path_to_audio
-            useDefaultValueInput: false
-          outgoingConnections:
-            - 'data->"Object" ZNQwvOpOx8YBLKvlcbyYy/ path_to_audio '
-          visualData: -500/150/400/800//
-        '[29M2B1NfQB5TvvIoKuQA5]:httpCall "HTTP CALL"':
-          data:
-            body: ""
-            errorOnNon200: true
-            headers: ""
-            jsonTemplate: ""
-            method: POST
-            text: ""
-            url: http://localhost:8000/methods/transcribe
-            useBodyInput: true
-            useHeadersInput: true
-            useMethodInput: false
-            useUrlInput: false
-          outgoingConnections:
-            - res_body->"Graph Output" q_75-qaLwU9Orl54ZmbtF/value
-          visualData: 500/0/400/800//
-        '[A8-8SAgUMrFZFtW7JetAh]:object "Object"':
-          data:
-            jsonTemplate: |-
-              {
-                  "Content-Type":"application/json"
-              }
-          outgoingConnections:
-            - output->"HTTP CALL" 29M2B1NfQB5TvvIoKuQA5/headers
-          visualData: 0/-200/400/800//
-        '[AeGcHkoNtpjpThoajcwaO]:graphInput "identifier"':
-          data:
-            dataType: string
-            defaultValue: whisper
-            editor: string
-            id: identifier
-            useDefaultValueInput: false
-          outgoingConnections:
-            - 'data->"Object" ZNQwvOpOx8YBLKvlcbyYy/ identifier '
-          visualData: -500/0/400/800//
-        '[ZNQwvOpOx8YBLKvlcbyYy]:object "Object"':
-          data:
-            jsonTemplate: |-
-              {
-                  "identifier": {{ identifier }},
-                  "path_to_audio": {{ path_to_audio }}
-              }
-          outgoingConnections:
-            - output->"HTTP CALL" 29M2B1NfQB5TvvIoKuQA5/req_body
-          visualData: 0/0/400/800//
-        '[q_75-qaLwU9Orl54ZmbtF]:graphOutput "Graph Output"':
-          data:
-            dataType: string
-            id: identifier
-          visualData: 1000/0/400/800//
-  metadata:
-    description: ""
-    id: QkvHJSzDtqoRAkiGj-t19
-    mainGraphId: fkNyEWMNcqvtno3aLQONC
-    title: VisualFlows
-  plugins: []
+    attachedData:
+        trivet:
+            testSuites: []
+            version: 1
+    metadata:
+        description: ""
+        id: QkvHJSzDtqoRAkiGj-t19
+        mainGraphId: lHVs9V2cS1IgD_5ynf-hr
+        title: VisualFlows
+    plugins: []
+    graphs:
+        7NcPhV8OHI8jI3uzYn4fK:
+            metadata:
+                description: auth tokens
+                id: 7NcPhV8OHI8jI3uzYn4fK
+                name: presets/auth_presets
+            nodes:
+                '[TrGRiTFCGEqQYLSjuolnZ]:object "Object"':
+                    data:
+                        jsonTemplate: |-
+                            {
+                                "name":"api_key"
+                            }
+                    
+                    outgoingConnections:
+                              - output->"Destructure" k2gOLjIBVMdLiXoasUoNy/object
+                    
+                    visualData: 0/0/400/800//
+                '[k2gOLjIBVMdLiXoasUoNy]:destructure "Destructure"':
+                    data:
+                        paths:
+                              - name    
+                    outgoingConnections:
+                              - match_0->"Graph Output" FSFZJ7K8eWvvlm_A4HSuV/value    
+                    visualData: 500/0/400/800//
+                '[FSFZJ7K8eWvvlm_A4HSuV]:graphOutput "Graph Output"':
+                    data:
+                        dataType: string
+                        id: name
+                    visualData: 1000/0/400/800//
+        W5FJJpKxAOSVtyvtx1BQj:
+            metadata:
+                description: HF Open LLM
+                id: W5FJJpKxAOSVtyvtx1BQj
+                name: presets/hf_hosted_text_gen
+            nodes:
+                '[jaAFdKp6EUcIgto6gm_SJ]:object "Object"':
+                    data:
+                        jsonTemplate: |-
+                            {
+                                "mixtral_8x7b_instruct_01":"mistralai/Mixtral-8x7B-Instruct-v0.1",
+                                "zephyr_beta":"HuggingFaceH4/zephyr-7b-beta",
+                                "star_chat_beta":"HuggingFaceH4/starchat-beta"
+                            }
+                    
+                    outgoingConnections:
+                              - output->"Destructure" ja7SCYIz5haGYgkPIsuWd/object
+                    
+                    visualData: 0/0/400/800//
+                '[ja7SCYIz5haGYgkPIsuWd]:destructure "Destructure"':
+                    data:
+                        paths:
+                              - mixtral_8x7b_instruct_01
+                              - zephyr_beta
+                              - star_chat_beta    
+                    outgoingConnections:
+                              - match_0->"Graph Output" Z8l5OM_SUTyk_MdNqNMI4/value
+                              - match_1->"Graph Output" NEwerVJjd_YDYIbkjOCAq/value
+                              - match_2->"Graph Output" nvks3MrNYltpfkp5MYe9-/value    
+                    visualData: 500/0/400/800//
+                '[nvks3MrNYltpfkp5MYe9-]:graphOutput "Graph Output"':
+                    data:
+                        dataType: string
+                        id: star_chat_beta
+                    visualData: 1000/300/400/800//
+                '[NEwerVJjd_YDYIbkjOCAq]:graphOutput "Graph Output"':
+                    data:
+                        dataType: string
+                        id: zephyr_beta
+                    visualData: 1000/150/400/800//
+                '[Z8l5OM_SUTyk_MdNqNMI4]:graphOutput "Graph Output"':
+                    data:
+                        dataType: string
+                        id: mixtral_8x7b_instruct_01
+                    visualData: 1000/0/400/800//
+        5DnEtyedoghg1QyfYSjRx:
+            metadata:
+                description: Stop Sequences
+                id: 5DnEtyedoghg1QyfYSjRx
+                name: presets/stop_sequences
+            nodes:
+                '[ETz4YJP3iJzuISps1We2d]:object "Object"':
+                    data:
+                        jsonTemplate: |-
+                            {
+                                "0 </s>":"</s>",
+                                "1 ```":"```",
+                                "2 <|im_end|>":"<|im_end|>",
+                                "3 3xhashtag":"###",
+                                "4 2xhashtag":"##",
+                                "5 <|end_of_turn|>":"<|end_of_turn|>"
+                            }
+                    
+                    outgoingConnections:
+                              - output->"Destructure" pGQh1rYMOzetT4fLu__IQ/object
+                    
+                    visualData: 0/0/400/800//
+                '[pGQh1rYMOzetT4fLu__IQ]:destructure "Destructure"':
+                    data:
+                        paths:
+                              - 0 </s>
+                              - 1 ```
+                              - 2 <|im_end|>
+                              - 3 3xhashtag
+                              - 4 2xhashtag
+                              - 5 <|end_of_turn|>    
+                    outgoingConnections:
+                              - match_0->"Graph Output" mveLfk3C_os-X2s4fwo8O/value
+                              - match_1->"Graph Output" 5VkWqRX3_X2oKDPUphyK2/value
+                              - match_2->"Graph Output" s9SyOl-GwolRucYUUuS-z/value
+                              - match_3->"Graph Output" f3VrnZx6YuBnACa6SbBtM/value
+                              - match_4->"Graph Output" FUjoD38rFncdandbDs8OM/value
+                              - match_5->"Graph Output" VYCFQH2ARk3zKe3x82bXe/value    
+                    visualData: 500/0/400/800//
+                '[VYCFQH2ARk3zKe3x82bXe]:graphOutput "Graph Output"':
+                    data:
+                        dataType: string
+                        id: 5 <|end_of_turn|>
+                    visualData: 1000/750/400/800//
+                '[FUjoD38rFncdandbDs8OM]:graphOutput "Graph Output"':
+                    data:
+                        dataType: string
+                        id: 4 2xhashtag
+                    visualData: 1000/600/400/800//
+                '[f3VrnZx6YuBnACa6SbBtM]:graphOutput "Graph Output"':
+                    data:
+                        dataType: string
+                        id: 3 3xhashtag
+                    visualData: 1000/450/400/800//
+                '[s9SyOl-GwolRucYUUuS-z]:graphOutput "Graph Output"':
+                    data:
+                        dataType: string
+                        id: 2 <|im_end|>
+                    visualData: 1000/300/400/800//
+                '[5VkWqRX3_X2oKDPUphyK2]:graphOutput "Graph Output"':
+                    data:
+                        dataType: string
+                        id: 1 ```
+                    visualData: 1000/150/400/800//
+                '[mveLfk3C_os-X2s4fwo8O]:graphOutput "Graph Output"':
+                    data:
+                        dataType: string
+                        id: 0 </s>
+                    visualData: 1000/0/400/800//
+        Zwrmg-p5r5TrkZkbntZuO:
+            metadata:
+                description: Creativité du llm
+                id: Zwrmg-p5r5TrkZkbntZuO
+                name: presets/temperature
+            nodes:
+                '[x1u8NFcGtA2MCMrfz4zYI]:object "Object"':
+                    data:
+                        jsonTemplate: |-
+                            {
+                                "0 Formal":0.0,
+                                "1 Balanced":0.3,
+                                "2 Creative":0.7,
+                                "3 Drunk":0.99,
+                                "4 Crazy":1.3
+                            }
+                    
+                    outgoingConnections:
+                              - output->"Destructure" slowcpC6qyzmUI74GnTge/object
+                    
+                    visualData: 0/0/400/800//
+                '[slowcpC6qyzmUI74GnTge]:destructure "Destructure"':
+                    data:
+                        paths:
+                              - 0 Formal
+                              - 1 Balanced
+                              - 2 Creative
+                              - 3 Drunk
+                              - 4 Crazy    
+                    outgoingConnections:
+                              - match_0->"Graph Output" DhQTnkSRFUf14RgDam7fG/value
+                              - match_1->"Graph Output" vQ3y-CB6KGGTms2whIegw/value
+                              - match_2->"Graph Output" GaM5oNORrlcaPRW23qumS/value
+                              - match_3->"Graph Output" TigG7AwVW7sBTcC9PnCXk/value
+                              - match_4->"Graph Output" QBEwochfOVYHuEQcKQRxw/value    
+                    visualData: 500/0/400/800//
+                '[QBEwochfOVYHuEQcKQRxw]:graphOutput "Graph Output"':
+                    data:
+                        dataType: number
+                        id: 4 Crazy
+                    visualData: 1000/600/400/800//
+                '[TigG7AwVW7sBTcC9PnCXk]:graphOutput "Graph Output"':
+                    data:
+                        dataType: number
+                        id: 3 Drunk
+                    visualData: 1000/450/400/800//
+                '[GaM5oNORrlcaPRW23qumS]:graphOutput "Graph Output"':
+                    data:
+                        dataType: number
+                        id: 2 Creative
+                    visualData: 1000/300/400/800//
+                '[vQ3y-CB6KGGTms2whIegw]:graphOutput "Graph Output"':
+                    data:
+                        dataType: number
+                        id: 1 Balanced
+                    visualData: 1000/150/400/800//
+                '[DhQTnkSRFUf14RgDam7fG]:graphOutput "Graph Output"':
+                    data:
+                        dataType: number
+                        id: 0 Formal
+                    visualData: 1000/0/400/800//
+        W5FJPpKQAOaVtyvtx1BQj:
+            metadata:
+                description: Ollama presets
+                id: W5FJPpKQAOaVtyvtx1BQj
+                name: presets/ollama_llm_presets
+            nodes:
+                '[8OOrFyJ8FSTXgmVme6TTj]:object "Object"':
+                    data:
+                        jsonTemplate: |-
+                            {
+                                "tinyllama-1b":"tinyllama-1b",
+                                "magicoder":"magicoder",
+                                "openchat-35-1210":"openchat-35-1210",
+                                "prometheus-7b-v1":"prometheus-7b-v1",
+                                "dolphin-26-mistral":"dolphin-26-mistral",
+                                "dolphin-26-phi":"dolphin-26-phi",
+                                "gorilla-function":"gorilla-function"
+                            }
+                    
+                    outgoingConnections:
+                              - output->"Destructure" id89swdTikR8M4D1IRoSF/object
+                    
+                    visualData: 0/0/400/800//
+                '[id89swdTikR8M4D1IRoSF]:destructure "Destructure"':
+                    data:
+                        paths:
+                              - tinyllama-1b
+                              - magicoder
+                              - openchat-35-1210
+                              - prometheus-7b-v1
+                              - dolphin-26-mistral
+                              - dolphin-26-phi
+                              - gorilla-function    
+                    outgoingConnections:
+                              - match_0->"Graph Output" MRiNdCuOrri5oK6FzbjwO/value
+                              - match_1->"Graph Output" sbX1FD-6MJMmZZqI-hKUW/value
+                              - match_2->"Graph Output" 596XzsFELrhCTbFt_8PeP/value
+                              - match_3->"Graph Output" eZH6M1HPFn61PEvQHawLa/value
+                              - match_4->"Graph Output" h2LL2dKzUKBhjDeXF_C65/value
+                              - match_5->"Graph Output" DAc9j7DnJqwORQ6Z9mwII/value
+                              - match_6->"Graph Output" CyvX-QWKlJ9YKjMcCR-4y/value    
+                    visualData: 500/0/400/800//
+                '[CyvX-QWKlJ9YKjMcCR-4y]:graphOutput "Graph Output"':
+                    data:
+                        dataType: string
+                        id: gorilla-function
+                    visualData: 1000/900/400/800//
+                '[DAc9j7DnJqwORQ6Z9mwII]:graphOutput "Graph Output"':
+                    data:
+                        dataType: string
+                        id: dolphin-26-phi
+                    visualData: 1000/750/400/800//
+                '[h2LL2dKzUKBhjDeXF_C65]:graphOutput "Graph Output"':
+                    data:
+                        dataType: string
+                        id: dolphin-26-mistral
+                    visualData: 1000/600/400/800//
+                '[eZH6M1HPFn61PEvQHawLa]:graphOutput "Graph Output"':
+                    data:
+                        dataType: string
+                        id: prometheus-7b-v1
+                    visualData: 1000/450/400/800//
+                '[596XzsFELrhCTbFt_8PeP]:graphOutput "Graph Output"':
+                    data:
+                        dataType: string
+                        id: openchat-35-1210
+                    visualData: 1000/300/400/800//
+                '[sbX1FD-6MJMmZZqI-hKUW]:graphOutput "Graph Output"':
+                    data:
+                        dataType: string
+                        id: magicoder
+                    visualData: 1000/150/400/800//
+                '[MRiNdCuOrri5oK6FzbjwO]:graphOutput "Graph Output"':
+                    data:
+                        dataType: string
+                        id: tinyllama-1b
+                    visualData: 1000/0/400/800//
+        FKfBEDxsK3dcCEApDArJ1:
+            metadata:
+                description: Longueur de contexte pour un llm
+                id: FKfBEDxsK3dcCEApDArJ1
+                name: presets/context_len
+            nodes:
+                '[I4p7RXAiVUMXmOYPOD13Z]:object "Object"':
+                    data:
+                        jsonTemplate: |-
+                            {
+                                "0 64":64,
+                                "1 128":128,
+                                "2 256":256,
+                                "3 512":512,
+                                "4 1k":1024,
+                                "5 2k":2048,
+                                "6 4k":4096,
+                                "7 8k":8192,
+                                "8 16k":16384,
+                                "9 32k":32768
+                            }
+                    
+                    outgoingConnections:
+                              - output->"Destructure" SoaxSnEBsRl_n847xcjJO/object
+                    
+                    visualData: 0/0/400/800//
+                '[SoaxSnEBsRl_n847xcjJO]:destructure "Destructure"':
+                    data:
+                        paths:
+                              - 0 64
+                              - 1 128
+                              - 2 256
+                              - 3 512
+                              - 4 1k
+                              - 5 2k
+                              - 6 4k
+                              - 7 8k
+                              - 8 16k
+                              - 9 32k    
+                    outgoingConnections:
+                              - match_0->"Graph Output" GQyt1BdlhRqJoVVhgSvhl/value
+                              - match_1->"Graph Output" fShd5qfgR4c3MCVsQR-Pv/value
+                              - match_2->"Graph Output" LEDgCSkjxTjyybS6wdW5z/value
+                              - match_3->"Graph Output" YmEFWuenamL3rDR7UP1f5/value
+                              - match_4->"Graph Output" dPZx7bnkZux88xqcJU21s/value
+                              - match_5->"Graph Output" uFFkSGrFa-NFBvBBmm4iS/value
+                              - match_6->"Graph Output" eDdFYtWGDEeV-s5-qJitc/value
+                              - match_7->"Graph Output" VZNGaC2-Hifdc-vhdF859/value
+                              - match_8->"Graph Output" RBanMeMd5I8D2ZjufmUiv/value
+                              - match_9->"Graph Output" _CB64jH2A1jUH77cJXht4/value    
+                    visualData: 500/0/400/800//
+                '[_CB64jH2A1jUH77cJXht4]:graphOutput "Graph Output"':
+                    data:
+                        dataType: number
+                        id: 9 32k
+                    visualData: 1000/1350/400/800//
+                '[RBanMeMd5I8D2ZjufmUiv]:graphOutput "Graph Output"':
+                    data:
+                        dataType: number
+                        id: 8 16k
+                    visualData: 1000/1200/400/800//
+                '[VZNGaC2-Hifdc-vhdF859]:graphOutput "Graph Output"':
+                    data:
+                        dataType: number
+                        id: 7 8k
+                    visualData: 1000/1050/400/800//
+                '[eDdFYtWGDEeV-s5-qJitc]:graphOutput "Graph Output"':
+                    data:
+                        dataType: number
+                        id: 6 4k
+                    visualData: 1000/900/400/800//
+                '[uFFkSGrFa-NFBvBBmm4iS]:graphOutput "Graph Output"':
+                    data:
+                        dataType: number
+                        id: 5 2k
+                    visualData: 1000/750/400/800//
+                '[dPZx7bnkZux88xqcJU21s]:graphOutput "Graph Output"':
+                    data:
+                        dataType: number
+                        id: 4 1k
+                    visualData: 1000/600/400/800//
+                '[YmEFWuenamL3rDR7UP1f5]:graphOutput "Graph Output"':
+                    data:
+                        dataType: number
+                        id: 3 512
+                    visualData: 1000/450/400/800//
+                '[LEDgCSkjxTjyybS6wdW5z]:graphOutput "Graph Output"':
+                    data:
+                        dataType: number
+                        id: 2 256
+                    visualData: 1000/300/400/800//
+                '[fShd5qfgR4c3MCVsQR-Pv]:graphOutput "Graph Output"':
+                    data:
+                        dataType: number
+                        id: 1 128
+                    visualData: 1000/150/400/800//
+                '[GQyt1BdlhRqJoVVhgSvhl]:graphOutput "Graph Output"':
+                    data:
+                        dataType: number
+                        id: 0 64
+                    visualData: 1000/0/400/800//
+        TtkuL2gcFK_cH_F3_Ufj4:
+            metadata:
+                description: load_hf_hosted_model
+                id: TtkuL2gcFK_cH_F3_Ufj4
+                name: methods/load_hf_hosted_model
+            nodes:
+                '[FEUyZbKVCXt-p5RHJlgIQ]:graphInput "temperature"':
+                    data:
+                        dataType: number
+                        defaultValue: 0.01
+                        editor: number
+                        id: temperature
+                        useDefaultValueInput: false
+                    outgoingConnections:
+                      - 'data->"Object" 2sqHFoRDjwZEpqGqb5E19/ temperature '
+                    visualData: -500/750/400/800//
+                '[_H6phySHjPXRik2JPvPfC]:graphInput "stop_sequences"':
+                    data:
+                        dataType: string
+                        defaultValue: </s>
+                        editor: string
+                        id: stop_sequences
+                        useDefaultValueInput: false
+                    outgoingConnections:
+                      - 'data->"Object" 2sqHFoRDjwZEpqGqb5E19/ stop_sequences '
+                    visualData: -500/600/400/800//
+                '[IdkOdPjPkRODnG5ta5waP]:graphInput "max_new_tokens"':
+                    data:
+                        dataType: number
+                        defaultValue: 256
+                        editor: number
+                        id: max_new_tokens
+                        useDefaultValueInput: false
+                    outgoingConnections:
+                      - 'data->"Object" 2sqHFoRDjwZEpqGqb5E19/ max_new_tokens '
+                    visualData: -500/450/400/800//
+                '[75vnuq79W_1suVqvrUTxH]:graphInput "auth_token"':
+                    data:
+                        dataType: string
+                        defaultValue: 
+                        editor: string
+                        id: auth_token
+                        useDefaultValueInput: false
+                    outgoingConnections:
+                      - 'data->"Object" 2sqHFoRDjwZEpqGqb5E19/ auth_token '
+                    visualData: -500/300/400/800//
+                '[tu6K1Obm_y7lazrPWev27]:graphInput "hf_name"':
+                    data:
+                        dataType: string
+                        defaultValue: HuggingFaceH4/zephyr-7b-beta
+                        editor: string
+                        id: hf_name
+                        useDefaultValueInput: false
+                    outgoingConnections:
+                      - 'data->"Object" 2sqHFoRDjwZEpqGqb5E19/ hf_name '
+                    visualData: -500/150/400/800//
+                '[dCpOOKLT5p1z_SxPXolHL]:graphInput "identifier"':
+                    data:
+                        dataType: string
+                        defaultValue: zephyr
+                        editor: string
+                        id: identifier
+                        useDefaultValueInput: false
+                    outgoingConnections:
+                      - 'data->"Object" 2sqHFoRDjwZEpqGqb5E19/ identifier '
+                    visualData: -500/0/400/800//
+                '[2sqHFoRDjwZEpqGqb5E19]:object "Object"':
+                    data:
+                        jsonTemplate: |-
+                            {
+                                "identifier": {{ identifier }},
+                                "hf_name": {{ hf_name }},
+                                "auth_token": {{ auth_token }},
+                                "max_new_tokens": {{ max_new_tokens }},
+                                "stop_sequences": {{ stop_sequences }},
+                                "temperature": {{ temperature }}
+                            }
+                    
+                    outgoingConnections:
+                              - output->"HTTP CALL" Nj-Xja9rzKiUlC4KY3_YH/req_body
+                    
+                    visualData: 0/0/400/800//
+                '[wp2FsIecmlssRqV6iVPLX]:object "Object"':
+                    data:
+                        jsonTemplate: |-
+                            {
+                                "Content-Type":"application/json"
+                            }
+                    
+                    outgoingConnections:
+                              - output->"HTTP CALL" Nj-Xja9rzKiUlC4KY3_YH/headers
+                    
+                    visualData: 0/-200/400/800//
+                '[Nj-Xja9rzKiUlC4KY3_YH]:httpCall "HTTP CALL"':
+                    data:
+                        body: ""
+                        errorOnNon200: true
+                        headers: ""
+                        jsonTemplate: ""
+                        method: POST
+                        text: ""
+                        url: http://localhost:8000/methods/load_hf_hosted_model
+                        useBodyInput: true
+                        useHeadersInput: true
+                        useMethodInput: false
+                        useUrlInput: false
+                    outgoingConnections:
+                              - res_body->"Graph Output" AKvOCDq_4UMklSURe_4mT/value
+                    visualData: 500/0/400/800//
+                '[AKvOCDq_4UMklSURe_4mT]:graphOutput "Graph Output"':
+                    data:
+                        dataType: string
+                        id: identifier
+                    visualData: 1000/0/400/800//
+        TtkuL2zft19_cH_F3_Ufj4:
+            metadata:
+                description: load_ollama_model
+                id: TtkuL2zft19_cH_F3_Ufj4
+                name: methods/load_ollama_model
+            nodes:
+                '[qxFguQiyB3h66ZlOSGs6C]:graphInput "temperature"':
+                    data:
+                        dataType: number
+                        defaultValue: 0.01
+                        editor: number
+                        id: temperature
+                        useDefaultValueInput: false
+                    outgoingConnections:
+                      - 'data->"Object" z6R2BHVg_BZ5YDDrmROSd/ temperature '
+                    visualData: -500/750/400/800//
+                '[VVNkInLNczsnLfqxVAVF6]:graphInput "stop_sequences"':
+                    data:
+                        dataType: string
+                        defaultValue: </s>
+                        editor: string
+                        id: stop_sequences
+                        useDefaultValueInput: false
+                    outgoingConnections:
+                      - 'data->"Object" z6R2BHVg_BZ5YDDrmROSd/ stop_sequences '
+                    visualData: -500/600/400/800//
+                '[m_KXuq5It4u1q6Coc2lE4]:graphInput "max_new_tokens"':
+                    data:
+                        dataType: number
+                        defaultValue: 256
+                        editor: number
+                        id: max_new_tokens
+                        useDefaultValueInput: false
+                    outgoingConnections:
+                      - 'data->"Object" z6R2BHVg_BZ5YDDrmROSd/ max_new_tokens '
+                    visualData: -500/450/400/800//
+                '[aG7KmaCrL1jrXUtABJWnx]:graphInput "num_gpu"':
+                    data:
+                        dataType: number
+                        defaultValue: -1
+                        editor: number
+                        id: num_gpu
+                        useDefaultValueInput: false
+                    outgoingConnections:
+                      - 'data->"Object" z6R2BHVg_BZ5YDDrmROSd/ num_gpu '
+                    visualData: -500/300/400/800//
+                '[tpxIbwiP7wchzNBp_UcPD]:graphInput "model"':
+                    data:
+                        dataType: string
+                        defaultValue: dolphin-phi
+                        editor: string
+                        id: model
+                        useDefaultValueInput: false
+                    outgoingConnections:
+                      - 'data->"Object" z6R2BHVg_BZ5YDDrmROSd/ model '
+                    visualData: -500/150/400/800//
+                '[ilXmohWi1l8vq6lYrqYsN]:graphInput "identifier"':
+                    data:
+                        dataType: string
+                        defaultValue: dolphin-phi
+                        editor: string
+                        id: identifier
+                        useDefaultValueInput: false
+                    outgoingConnections:
+                      - 'data->"Object" z6R2BHVg_BZ5YDDrmROSd/ identifier '
+                    visualData: -500/0/400/800//
+                '[z6R2BHVg_BZ5YDDrmROSd]:object "Object"':
+                    data:
+                        jsonTemplate: |-
+                            {
+                                "identifier": {{ identifier }},
+                                "model": {{ model }},
+                                "num_gpu": {{ num_gpu }},
+                                "max_new_tokens": {{ max_new_tokens }},
+                                "stop_sequences": {{ stop_sequences }},
+                                "temperature": {{ temperature }}
+                            }
+                    
+                    outgoingConnections:
+                              - output->"HTTP CALL" zzr2MeHdTTFVmdPa6h5Yc/req_body
+                    
+                    visualData: 0/0/400/800//
+                '[lPP-HOSgcR4HBCl2QJ1mH]:object "Object"':
+                    data:
+                        jsonTemplate: |-
+                            {
+                                "Content-Type":"application/json"
+                            }
+                    
+                    outgoingConnections:
+                              - output->"HTTP CALL" zzr2MeHdTTFVmdPa6h5Yc/headers
+                    
+                    visualData: 0/-200/400/800//
+                '[zzr2MeHdTTFVmdPa6h5Yc]:httpCall "HTTP CALL"':
+                    data:
+                        body: ""
+                        errorOnNon200: true
+                        headers: ""
+                        jsonTemplate: ""
+                        method: POST
+                        text: ""
+                        url: http://localhost:8000/methods/load_ollama_model
+                        useBodyInput: true
+                        useHeadersInput: true
+                        useMethodInput: false
+                        useUrlInput: false
+                    outgoingConnections:
+                              - res_body->"Graph Output" iYHEzKK4CRhBvne-_9NrX/value
+                    visualData: 500/0/400/800//
+                '[iYHEzKK4CRhBvne-_9NrX]:graphOutput "Graph Output"':
+                    data:
+                        dataType: string
+                        id: identifier
+                    visualData: 1000/0/400/800//
+        ssYNXMPG88iEvKK2Z-Ihu:
+            metadata:
+                description: load_whisper
+                id: ssYNXMPG88iEvKK2Z-Ihu
+                name: methods/load_whisper
+            nodes:
+                '[uPkhau-rSTj56BtgIg17b]:graphInput "precision"':
+                    data:
+                        dataType: string
+                        defaultValue: int8
+                        editor: string
+                        id: precision
+                        useDefaultValueInput: false
+                    outgoingConnections:
+                      - 'data->"Object" NxbGl66GYoWRz15JgK3Z-/ precision '
+                    visualData: -500/450/400/800//
+                '[jbUve_dGBr3gd1t4pegpl]:graphInput "device"':
+                    data:
+                        dataType: string
+                        defaultValue: cpu
+                        editor: string
+                        id: device
+                        useDefaultValueInput: false
+                    outgoingConnections:
+                      - 'data->"Object" NxbGl66GYoWRz15JgK3Z-/ device '
+                    visualData: -500/300/400/800//
+                '[-LQofo9X3nhF-BGNXji7p]:graphInput "model_version"':
+                    data:
+                        dataType: string
+                        defaultValue: base
+                        editor: string
+                        id: model_version
+                        useDefaultValueInput: false
+                    outgoingConnections:
+                      - 'data->"Object" NxbGl66GYoWRz15JgK3Z-/ model_version '
+                    visualData: -500/150/400/800//
+                '[GSRorch62741IoAwsVYZ8]:graphInput "identifier"':
+                    data:
+                        dataType: string
+                        defaultValue: whisper
+                        editor: string
+                        id: identifier
+                        useDefaultValueInput: false
+                    outgoingConnections:
+                      - 'data->"Object" NxbGl66GYoWRz15JgK3Z-/ identifier '
+                    visualData: -500/0/400/800//
+                '[NxbGl66GYoWRz15JgK3Z-]:object "Object"':
+                    data:
+                        jsonTemplate: |-
+                            {
+                                "identifier": {{ identifier }},
+                                "model_version": {{ model_version }},
+                                "device": {{ device }},
+                                "precision": {{ precision }}
+                            }
+                    
+                    outgoingConnections:
+                              - output->"HTTP CALL" Eq3ybjqd-fFwGwGEpZUy8/req_body
+                    
+                    visualData: 0/0/400/800//
+                '[bOUxruazAMHQkfIh2oEOz]:object "Object"':
+                    data:
+                        jsonTemplate: |-
+                            {
+                                "Content-Type":"application/json"
+                            }
+                    
+                    outgoingConnections:
+                              - output->"HTTP CALL" Eq3ybjqd-fFwGwGEpZUy8/headers
+                    
+                    visualData: 0/-200/400/800//
+                '[Eq3ybjqd-fFwGwGEpZUy8]:httpCall "HTTP CALL"':
+                    data:
+                        body: ""
+                        errorOnNon200: true
+                        headers: ""
+                        jsonTemplate: ""
+                        method: POST
+                        text: ""
+                        url: http://localhost:8000/methods/load_whisper
+                        useBodyInput: true
+                        useHeadersInput: true
+                        useMethodInput: false
+                        useUrlInput: false
+                    outgoingConnections:
+                              - res_body->"Graph Output" wjTgSp76HUMMmEQlJNPNC/value
+                    visualData: 500/0/400/800//
+                '[wjTgSp76HUMMmEQlJNPNC]:graphOutput "Graph Output"':
+                    data:
+                        dataType: string
+                        id: identifier
+                    visualData: 1000/0/400/800//
+        ssYnXDDG8hiEvKK2Z-ILu:
+            metadata:
+                description: run_prompt
+                id: ssYnXDDG8hiEvKK2Z-ILu
+                name: methods/run_prompt
+            nodes:
+                '[foc2ullpqDA8iMgz_lfU7]:graphInput "prompt"':
+                    data:
+                        dataType: string
+                        defaultValue: Hello World
+                        editor: string
+                        id: prompt
+                        useDefaultValueInput: false
+                    outgoingConnections:
+                      - 'data->"Object" 8t7oH-ARUFodIJJU6cGPn/ prompt '
+                    visualData: -500/150/400/800//
+                '[p83wVHJv6wBYmMTmfzqOF]:graphInput "identifier"':
+                    data:
+                        dataType: string
+                        defaultValue: zephyr
+                        editor: string
+                        id: identifier
+                        useDefaultValueInput: false
+                    outgoingConnections:
+                      - 'data->"Object" 8t7oH-ARUFodIJJU6cGPn/ identifier '
+                    visualData: -500/0/400/800//
+                '[8t7oH-ARUFodIJJU6cGPn]:object "Object"':
+                    data:
+                        jsonTemplate: |-
+                            {
+                                "identifier": {{ identifier }},
+                                "prompt": {{ prompt }}
+                            }
+                    
+                    outgoingConnections:
+                              - output->"HTTP CALL" OybdX62QZEUgg-N5xdHUe/req_body
+                    
+                    visualData: 0/0/400/800//
+                '[maHtZytd4F1torLgIBZaI]:object "Object"':
+                    data:
+                        jsonTemplate: |-
+                            {
+                                "Content-Type":"application/json"
+                            }
+                    
+                    outgoingConnections:
+                              - output->"HTTP CALL" OybdX62QZEUgg-N5xdHUe/headers
+                    
+                    visualData: 0/-200/400/800//
+                '[OybdX62QZEUgg-N5xdHUe]:httpCall "HTTP CALL"':
+                    data:
+                        body: ""
+                        errorOnNon200: true
+                        headers: ""
+                        jsonTemplate: ""
+                        method: POST
+                        text: ""
+                        url: http://localhost:8000/methods/run_prompt
+                        useBodyInput: true
+                        useHeadersInput: true
+                        useMethodInput: false
+                        useUrlInput: false
+                    outgoingConnections:
+                              - res_body->"Graph Output" S2euQX9vcCPbWMTr2mPwZ/value
+                    visualData: 500/0/400/800//
+                '[S2euQX9vcCPbWMTr2mPwZ]:graphOutput "Graph Output"':
+                    data:
+                        dataType: string
+                        id: identifier
+                    visualData: 1000/0/400/800//
+        ssYnXDaG8Mi2vKK2Z-ILu:
+            metadata:
+                description: run_prompt_stream
+                id: ssYnXDaG8Mi2vKK2Z-ILu
+                name: methods/run_prompt_stream
+            nodes:
+                '[D52YJqomw8mj5W4ZpxITd]:graphInput "prompt"':
+                    data:
+                        dataType: string
+                        defaultValue: Hello World
+                        editor: string
+                        id: prompt
+                        useDefaultValueInput: false
+                    outgoingConnections:
+                      - 'data->"Object" bH1itO-C-XbVJzEOwMoVw/ prompt '
+                    visualData: -500/150/400/800//
+                '[5Pp1Qiz-Wn2LjmjywuL18]:graphInput "identifier"':
+                    data:
+                        dataType: string
+                        defaultValue: zephyr
+                        editor: string
+                        id: identifier
+                        useDefaultValueInput: false
+                    outgoingConnections:
+                      - 'data->"Object" bH1itO-C-XbVJzEOwMoVw/ identifier '
+                    visualData: -500/0/400/800//
+                '[bH1itO-C-XbVJzEOwMoVw]:object "Object"':
+                    data:
+                        jsonTemplate: |-
+                            {
+                                "identifier": {{ identifier }},
+                                "prompt": {{ prompt }}
+                            }
+                    
+                    outgoingConnections:
+                              - output->"HTTP CALL" 2exNVhMBuqMxdzCZ9JZI-/req_body
+                    
+                    visualData: 0/0/400/800//
+                '[k_39rRiGB3BybbjX6eDUe]:object "Object"':
+                    data:
+                        jsonTemplate: |-
+                            {
+                                "Content-Type":"application/json"
+                            }
+                    
+                    outgoingConnections:
+                              - output->"HTTP CALL" 2exNVhMBuqMxdzCZ9JZI-/headers
+                    
+                    visualData: 0/-200/400/800//
+                '[2exNVhMBuqMxdzCZ9JZI-]:httpCall "HTTP CALL"':
+                    data:
+                        body: ""
+                        errorOnNon200: true
+                        headers: ""
+                        jsonTemplate: ""
+                        method: POST
+                        text: ""
+                        url: http://localhost:8000/methods/run_prompt_stream
+                        useBodyInput: true
+                        useHeadersInput: true
+                        useMethodInput: false
+                        useUrlInput: false
+                    outgoingConnections:
+                              - res_body->"Graph Output" NRRdB54t1pmVmRvyESlyr/value
+                    visualData: 500/0/400/800//
+                '[NRRdB54t1pmVmRvyESlyr]:graphOutput "Graph Output"':
+                    data:
+                        dataType: string
+                        id: identifier
+                    visualData: 1000/0/400/800//
+        ssYnXODjAmiEvKK2Z-ILu:
+            metadata:
+                description: transcribe
+                id: ssYnXODjAmiEvKK2Z-ILu
+                name: methods/transcribe
+            nodes:
+                '[54GiyQwtAvLJd7X_Ni-OV]:graphInput "path_to_audio"':
+                    data:
+                        dataType: string
+                        defaultValue: Hello World
+                        editor: string
+                        id: path_to_audio
+                        useDefaultValueInput: false
+                    outgoingConnections:
+                      - 'data->"Object" nDGnaCn97LUskU4qcmGKz/ path_to_audio '
+                    visualData: -500/150/400/800//
+                '[SV7SKAKokmDz7zuFw45Ik]:graphInput "identifier"':
+                    data:
+                        dataType: string
+                        defaultValue: whisper
+                        editor: string
+                        id: identifier
+                        useDefaultValueInput: false
+                    outgoingConnections:
+                      - 'data->"Object" nDGnaCn97LUskU4qcmGKz/ identifier '
+                    visualData: -500/0/400/800//
+                '[nDGnaCn97LUskU4qcmGKz]:object "Object"':
+                    data:
+                        jsonTemplate: |-
+                            {
+                                "identifier": {{ identifier }},
+                                "path_to_audio": {{ path_to_audio }}
+                            }
+                    
+                    outgoingConnections:
+                              - output->"HTTP CALL" xBdEg1_Dzk7BD4s3biBry/req_body
+                    
+                    visualData: 0/0/400/800//
+                '[fDvqXvTCuGBJUKJ61scmY]:object "Object"':
+                    data:
+                        jsonTemplate: |-
+                            {
+                                "Content-Type":"application/json"
+                            }
+                    
+                    outgoingConnections:
+                              - output->"HTTP CALL" xBdEg1_Dzk7BD4s3biBry/headers
+                    
+                    visualData: 0/-200/400/800//
+                '[xBdEg1_Dzk7BD4s3biBry]:httpCall "HTTP CALL"':
+                    data:
+                        body: ""
+                        errorOnNon200: true
+                        headers: ""
+                        jsonTemplate: ""
+                        method: POST
+                        text: ""
+                        url: http://localhost:8000/methods/transcribe
+                        useBodyInput: true
+                        useHeadersInput: true
+                        useMethodInput: false
+                        useUrlInput: false
+                    outgoingConnections:
+                              - res_body->"Graph Output" t-iTMM4JvyQZVqoNOjmzH/value
+                    visualData: 500/0/400/800//
+                '[t-iTMM4JvyQZVqoNOjmzH]:graphOutput "Graph Output"':
+                    data:
+                        dataType: string
+                        id: identifier
+                    visualData: 1000/0/400/800//
+        8ibqxj_6Nx-cjTaWBG4pn:
+            metadata:
+                description: run_code_with_error
+                id: 8ibqxj_6Nx-cjTaWBG4pn
+                name: methods/run_code_with_error
+            nodes:
+                '[IkUYpfPmEZo8LR3dsgk5n]:graphInput "code"':
+                    data:
+                        dataType: string
+                        defaultValue: print('hello world')
+                        editor: string
+                        id: code
+                        useDefaultValueInput: false
+                    outgoingConnections:
+                      - 'data->"Object" D_733nzP2NMvzvO13LvEy/ code '
+                    visualData: -500/0/400/800//
+                '[D_733nzP2NMvzvO13LvEy]:object "Object"':
+                    data:
+                        jsonTemplate: |-
+                            {
+                                "code": {{ code }}
+                            }
+                    
+                    outgoingConnections:
+                              - output->"HTTP CALL" _P1wrxY1CuwOSUZ5xKjhb/req_body
+                    
+                    visualData: 0/0/400/800//
+                '[dyYXOMt5OKVYTVF2sPWUw]:object "Object"':
+                    data:
+                        jsonTemplate: |-
+                            {
+                                "Content-Type":"application/json"
+                            }
+                    
+                    outgoingConnections:
+                              - output->"HTTP CALL" _P1wrxY1CuwOSUZ5xKjhb/headers
+                    
+                    visualData: 0/-200/400/800//
+                '[_P1wrxY1CuwOSUZ5xKjhb]:httpCall "HTTP CALL"':
+                    data:
+                        body: ""
+                        errorOnNon200: true
+                        headers: ""
+                        jsonTemplate: ""
+                        method: POST
+                        text: ""
+                        url: http://localhost:8000/methods/run_code_with_error
+                        useBodyInput: true
+                        useHeadersInput: true
+                        useMethodInput: false
+                        useUrlInput: false
+                    outgoingConnections:
+                              - res_body->"Graph Output" 8uPH-XwxHi9PfZPGuxc2B/value
+                    visualData: 500/0/400/800//
+                '[8uPH-XwxHi9PfZPGuxc2B]:graphOutput "Graph Output"':
+                    data:
+                        dataType: string
+                        id: result
+                    visualData: 1000/0/400/800//
+        lHVs9V2cS1IgD_5ynf-hr:
+            metadata:
+                description: Playground
+                id: lHVs9V2cS1IgD_5ynf-hr
+                name: Playground
+            nodes:
+                '[-Kgzr6m-KkKhYTAuScqyj]:comment "Playground"':
+                    data:
+                        backgroundColor: rgba(254,152,154,0.3)
+                        color: rgba(255,255,255,1)
+                        height: 600
+                        text: "## Methods"
+                    visualData: 200/200/15600/600//
+                '[nvadC9oKvNV3jii2V_dgK]:comment "Playground"':
+                    data:
+                        backgroundColor: rgba(230,254,115,0.3)
+                        color: rgba(255,255,255,1)
+                        height: 1200
+                        text: "## Prompts"
+                    visualData: 200/2800/15600/1200//
+                '[INwMCJQoQqKtpMhCtP8Vo]:comment "Playground"':
+                    data:
+                        backgroundColor: rgba(120,245,206,0.3)
+                        color: rgba(255,255,255,1)
+                        height: 1900
+                        text: "## Presets"
+                    visualData: 200/850/600/1900//
+                '[Njp5kwOacC-s18TBtuedE]:comment "Playground"':
+                    data:
+                        backgroundColor: rgba(62,52,255,0.3)
+                        color: rgba(255,255,255,1)
+                        height: 1900
+                        text: "## Flows"
+                    visualData: 850/850/14950/1900//
+                '[NV3AHhF2Q6G-53_3CUCff]:text "evaluation_criterion"':
+                    data:
+                        text: "Based on the following instruction:\n{{ instruction }}\n\n\nPropose an evaluation criterion and 5 level of mastery (1 = Beginner, 5 = Master)\nUse the following template.\n\n\n###Score Rubrics:\n[criteria_description]\nScore 1: score1_description\nScore 2: score2_description\nScore 3: score3_description\nScore 4: score4_description\nScore 5: score5_description"
+                    visualData: 450/3000/500/400//
+                '[SSzfPPYje3OK1x3QnIUnI]:text "concatenate"':
+                    data:
+                        text: "{{ prompt1 }}\n{{ prompt2 }}"
+                    visualData: 1050/3000/500/400//
+                '[Be769Icl8icalgz9Xmp45]:text "phi_prompt"':
+                    data:
+                        text: "Instruct: {{ prompt }}\nOutput: "
+                    visualData: 1050/3200/500/400//
+                '[a-EeW4nFe7EZCpb-OJhAh]:text "openchat_user"':
+                    data:
+                        text: "GPT4 Correct User: {{ prompt }}<|end_of_turn|>"
+                    visualData: 1650/3000/500/400//
+                '[oH2DfpNE98x9fZ7hd-u_V]:text "openchat_assistant"':
+                    data:
+                        text: "GPT4 Correct Assistant: {{ prompt }}<|end_of_turn|>"
+                    visualData: 1650/3200/500/400//
+                '[F6QWs53YWf9oVpKvzpDGA]:text "openchat_prompt"':
+                    data:
+                        text: "GPT4 Correct User: {{ prompt }}<|end_of_turn|>GPT4 Correct Assistant: "
+                    visualData: 1650/3400/500/400//
+                '[sifZaEL-viqW6wNrK3yFQ]:text "openchat_math"':
+                    data:
+                        text: "Math Correct User: {{ prompt }}<|end_of_turn|>Math Correct Assistant: "
+                    visualData: 1650/3600/500/400//
+                '[12qSPoBadH9Zkqnk8QOhW]:text "zephyr_system"':
+                    data:
+                        text: "<|system|>\n{{ prompt }}</s>"
+                    visualData: 2250/3000/500/400//
+                '[hfS115SmPIjJQh3Xjv6wl]:text "zephyr_user"':
+                    data:
+                        text: "<|user|>\n{{ prompt }}</s>"
+                    visualData: 2250/3200/500/400//
+                '[w5mU4w_DR-ElyabJPnBli]:text "zephyr_assistant"':
+                    data:
+                        text: "<|assistant|>\n{{ prompt }}</s>"
+                    visualData: 2250/3400/500/400//
+                '[qahph1b5FoFGwm5tR-KTS]:text "zephyr_prompt"':
+                    data:
+                        text: "<|user|>\n{{ prompt }}</s>\n<|assistant|>\n"
+                    visualData: 2250/3600/500/400//
+                '[gKr9IkvFnzReZIUl-u3zc]:text "chatml_system"':
+                    data:
+                        text: "<|im_start|>system\n{{ prompt }}<|im_end|>"
+                    visualData: 2850/3000/500/400//
+                '[laU4AzDyGHcmLgwer_O_H]:text "chatml_user"':
+                    data:
+                        text: "<|im_start|>user\n{{ prompt }}<|im_end|>"
+                    visualData: 2850/3200/500/400//
+                '[334CxXmy191AyDQoakL9T]:text "chatml_assistant"':
+                    data:
+                        text: "<|im_start|>assistant\n{{ prompt }}<|im_end|>"
+                    visualData: 2850/3400/500/400//
+                '[V4X1gERc6Zh-Dy8wrjMoS]:text "chatml_prompt"':
+                    data:
+                        text: "<|im_start|>user\n{{ prompt }}<|im_end|>\n<|im_start|>assistant\n"
+                    visualData: 2850/3600/500/400//
+                '[KA9kbrxjzbB4mO5EHO2xc]:text "magicoder_system"':
+                    data:
+                        text: "{{ prompt }}"
+                    visualData: 3450/3000/500/400//
+                '[ol_lyoAqkC1JlOnOgvjyw]:text "magicoder_user"':
+                    data:
+                        text: "@@ Instruction\n{{ prompt }}\n\n"
+                    visualData: 3450/3200/500/400//
+                '[q2WFJUxModabywNU3Hw3A]:text "magicoder_assistant"':
+                    data:
+                        text: "@@ Response\n{{ prompt }}\n\n"
+                    visualData: 3450/3400/500/400//
+                '[PttlY8eP2Njlic8D3-KT7]:text "magicoder_prompt"':
+                    data:
+                        text: "@@ Instruction\n{{ prompt }}\n\n\n@@ Response\\n"
+                    visualData: 3450/3600/500/400//
+                '[qj5CCGcDmxTdice_iPfAE]:text "magicoder_python_prompt"':
+                    data:
+                        text: "@@ Instruction\n{{ prompt }}\n\n\n@@ Response\n\n```python"
+                    visualData: 3450/3800/500/400//
+                '[qyL4TcYubaezsZQREonrI]:text "mistral_system"':
+                    data:
+                        text: "<s>{{ prompt }}"
+                    visualData: 4050/3000/500/400//
+                '[x1SnfY43-voqL63qTjxCc]:text "mistral_user"':
+                    data:
+                        text: " [INST] {{ prompt }} [/INST] "
+                    visualData: 4050/3200/500/400//
+                '[uKRCiCGgVlHxrD5qtDQW3]:text "mistral_assistant"':
+                    data:
+                        text: "{{ prompt }}</s>"
+                    visualData: 4050/3400/500/400//
+                '[AMBVMehHORkslf6cJLyN5]:text "mistral_prompt"':
+                    data:
+                        text: " [INST] {{ prompt }} [/INST] "
+                    visualData: 4050/3600/500/400//
+                '[Tb7y7HsFebbAfw-bEU_Uh]:text "vicuna_system"':
+                    data:
+                        text: "### System:\n{{ prompt }}\n\n"
+                    visualData: 4650/3000/500/400//
+                '[DFE-kP1rtfGrSRgC4djzL]:text "vicuna_user"':
+                    data:
+                        text: "### User:\n{{ prompt }}\n\n"
+                    visualData: 4650/3200/500/400//
+                '[q9yxK1dI2HcL_toamI59O]:text "vicuna_assistant"':
+                    data:
+                        text: "### Assistant:\n{{ prompt }}\n\n"
+                    visualData: 4650/3400/500/400//
+                '[u_isgLKlbyWOJVNwkCBdp]:text "vicuna_prompt"':
+                    data:
+                        text: "### User:\n{{ prompt }}\n\n\n### Assistant:\\n"
+                    visualData: 4650/3600/500/400//
+                '[LqbzQAe6lLm9JwvYcfa4A]:text "prometheus_task"':
+                    data:
+                        text: "An instruction (might include an Input inside it), a response to evaluate, a reference answer that gets a score of 5, and a score rubric representing a evaluation criteria are given.\n1. Write a detailed feedback that assess the quality of the response strictly based on the given score rubric, not evaluating in general.\n2. After writing a feedback, write a score that is an integer between 1 and 5. You should refer to the score rubric.\n3. The output format should look as follows: 'Feedback: (write a feedback for criteria) [RESULT] (an integer number between 1 and 5)'\n4. Please do not generate any other opening, closing, and explanations."
+                    visualData: 5250/3000/500/400//
+                '[N6sQlYkHnUYRE38Qr2gtz]:text "prometheus_prompt"':
+                    data:
+                        text: "###Task Description:\n{{ task }}\n\n###The instruction to evaluate:\n{{ instruction }}\n\n###Response to evaluate:\n{{ response }}\n\n###Reference Answer (Score 5):\n{{ reference_answer }}\n\n###Score Rubrics:\n{{ criteria_description }}\n\n###Feedback: \n"
+                    visualData: 5250/3200/500/400//
+                '[ui1IkPgTtgP_ByH4A4ik-]:subGraph "auth_presets"':
+                    data:
+                        graphId: 7NcPhV8OHI8jI3uzYn4fK
+                        useAsGraphPartialOutput: false
+                        useErrorOutput: false
+                        height: 400
+                    outgoingConnections:
+                    visualData: 250/1000/500/400//
+                '[Kd-mdgFSnrSBodE2BgwT2]:subGraph "hf_open_llm_presets"':
+                    data:
+                        graphId: W5FJJpKxAOSVtyvtx1BQj
+                        useAsGraphPartialOutput: false
+                        useErrorOutput: false
+                        height: 400
+                    outgoingConnections:
+                    visualData: 250/1250/500/400//
+                '[vBzibou73A4Tu_FHZxgfz]:subGraph "stop_sequences_presets"':
+                    data:
+                        graphId: 5DnEtyedoghg1QyfYSjRx
+                        useAsGraphPartialOutput: false
+                        useErrorOutput: false
+                        height: 400
+                    outgoingConnections:
+                    visualData: 250/1500/500/400//
+                '[-aGUyBZYNmg_I5jK8Pl8-]:subGraph "temperature_presets"':
+                    data:
+                        graphId: Zwrmg-p5r5TrkZkbntZuO
+                        useAsGraphPartialOutput: false
+                        useErrorOutput: false
+                        height: 400
+                    outgoingConnections:
+                    visualData: 250/1750/500/400//
+                '[SeSlaCTupIwIXZPrER82H]:subGraph "ollama_llm_presets"':
+                    data:
+                        graphId: W5FJPpKQAOaVtyvtx1BQj
+                        useAsGraphPartialOutput: false
+                        useErrorOutput: false
+                        height: 400
+                    outgoingConnections:
+                    visualData: 250/2000/500/400//
+                '[fRRTWZiRG55YBxAjFxMYO]:subGraph "context_len_presets"':
+                    data:
+                        graphId: FKfBEDxsK3dcCEApDArJ1
+                        useAsGraphPartialOutput: false
+                        useErrorOutput: false
+                        height: 400
+                    outgoingConnections:
+                    visualData: 250/2250/500/400//
+                '[51a1iVCxJ5LRLK-DC-9al]:subGraph "load_hf_hosted_model"':
+                    data:
+                        graphId: TtkuL2gcFK_cH_F3_Ufj4
+                        useAsGraphPartialOutput: false
+                        useErrorOutput: false
+                        height: 400
+                    outgoingConnections:
+                    visualData: 250/400/500/400//
+                '[BM3V8e82Voy_IyWXPK3zL]:subGraph "load_ollama_model"':
+                    data:
+                        graphId: TtkuL2zft19_cH_F3_Ufj4
+                        useAsGraphPartialOutput: false
+                        useErrorOutput: false
+                        height: 400
+                    outgoingConnections:
+                    visualData: 850/400/500/400//
+                '[GFXLqibtNmHg8fmTgk8sV]:subGraph "load_whisper"':
+                    data:
+                        graphId: ssYNXMPG88iEvKK2Z-Ihu
+                        useAsGraphPartialOutput: false
+                        useErrorOutput: false
+                        height: 400
+                    outgoingConnections:
+                    visualData: 1450/400/500/400//
+                '[gvTW42eJTZDDEOdfT62Nt]:subGraph "run_prompt"':
+                    data:
+                        graphId: ssYnXDDG8hiEvKK2Z-ILu
+                        useAsGraphPartialOutput: false
+                        useErrorOutput: false
+                        height: 400
+                    outgoingConnections:
+                    visualData: 2050/400/500/400//
+                '[flOrkisWJMmt2HD5PVPJ7]:subGraph "run_prompt_stream"':
+                    data:
+                        graphId: ssYnXDaG8Mi2vKK2Z-ILu
+                        useAsGraphPartialOutput: false
+                        useErrorOutput: false
+                        height: 400
+                    outgoingConnections:
+                    visualData: 2650/400/500/400//
+                '[OUkHVcpB7lRBQW4-LcMn3]:subGraph "transcribe"':
+                    data:
+                        graphId: ssYnXODjAmiEvKK2Z-ILu
+                        useAsGraphPartialOutput: false
+                        useErrorOutput: false
+                        height: 400
+                    outgoingConnections:
+                    visualData: 3250/400/500/400//
+                '[z3hhBcYpkDrKv4IpUOF2y]:subGraph "run_code_with_error"':
+                    data:
+                        graphId: 8ibqxj_6Nx-cjTaWBG4pn
+                        useAsGraphPartialOutput: false
+                        useErrorOutput: false
+                        height: 400
+                    outgoingConnections:
+                    visualData: 3850/400/500/400//
